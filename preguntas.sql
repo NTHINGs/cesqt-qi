@@ -11,6 +11,10 @@ INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('Años que
 INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('Ultimo grado de estudio','INFORMACION', 0);
 INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('¿En qué puesto trabaja actualmente?','INFORMACION', 0);
 -- SINDROME_QUEMARSE
+-- ILUSION_POR_EL_TRABAJO
+-- INDOLENCIA
+-- DESGASTE_PSIQUICO
+-- CULPA
 INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('Mi trabajo no supone un reto estimulante.','ILUSION_POR_EL_TRABAJO', 0);
 INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('No me apetece atender a algunos clientes.','INDOLENCIA', 0);
 INSERT INTO wp_cesqt_preguntas(`pregunta`, `tipo`, `inversa`) VALUES ('Creo que muchos clientes son insoportables','INDOLENCIA', 0);
