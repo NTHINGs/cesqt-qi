@@ -36,25 +36,25 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
         } else {
             global $wpdb;
             $table_name = $wpdb->prefix . "cesqt_preguntas";
-            $preguntas = array();
-            $tipos_pregunta = $wpdb->get_results(
-                "SELECT DISTINCT tipo FROM $table_name", 
-                'ARRAY_A'
-            );
+            $preguntas = file_get_contents( plugin_dir_path( __DIR__ ) . "/util/preguntas.json" );
+            // $tipos_pregunta = $wpdb->get_results(
+            //     "SELECT DISTINCT tipo FROM $table_name", 
+            //     'ARRAY_A'
+            // );
 
-            foreach($tipos_pregunta as $index => $row) {
-                $tipo_array = array();
-                $tipo_array['tipo'] = $row['tipo'];
-                $tipo_array['preguntas'] = $wpdb->get_results(
-                    "SELECT * FROM $table_name WHERE tipo = '{$row['tipo']}'",
-                    'ARRAY_A'
-                );
-                // $tipo_array['descripcion'] =
+            // foreach($tipos_pregunta as $index => $row) {
+            //     $tipo_array = array();
+            //     $tipo_array['tipo'] = $row['tipo'];
+            //     $tipo_array['preguntas'] = $wpdb->get_results(
+            //         "SELECT * FROM $table_name WHERE tipo = '{$row['tipo']}'",
+            //         'ARRAY_A'
+            //     );
+            //     // $tipo_array['descripcion'] =
 
-                $preguntas[$index] = $tipo_array;
-            }
+            //     $preguntas[$index] = $tipo_array;
+            // }
 
-            echo '<pre>' . json_encode($preguntas) . '</pre>';
+            echo '<pre>' . $preguntas . '</pre>';
 
             $variables = array(
                 "%REQUEST_URI%",
@@ -70,7 +70,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             )[0]->display_name;
             $values = array(
                 esc_url( $_SERVER['REQUEST_URI'] ),
-                json_encode($preguntas),
+                $preguntas,
                 $_GET['org_id'],
                 $organizacion
             );
