@@ -63,7 +63,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             )[0]->display_name;
             $values = array(
                 esc_url( $_SERVER['REQUEST_URI'] ),
-                $preguntas,
+                json_encode($preguntas),
                 $_GET['org_id'],
                 $organizacion
             );
