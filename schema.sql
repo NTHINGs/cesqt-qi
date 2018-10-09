@@ -2,9 +2,9 @@
 -- ***************************************************;
 
 
--- ************************************** %TABLE_PREFIX%cesqt_registros
+-- ************************************** %TABLE_PREFIX%registros
 
-CREATE TABLE %TABLE_PREFIX%cesqt_registros
+CREATE TABLE %TABLE_PREFIX%registros
 (
  id               INT NOT NULL AUTO_INCREMENT ,
  fechaaplicacion  DATETIME NOT NULL ,
@@ -18,9 +18,9 @@ PRIMARY KEY (id)
 
 
 
--- ************************************** %TABLE_PREFIX%cesqt_preguntas
+-- ************************************** %TABLE_PREFIX%preguntas
 
-CREATE TABLE %TABLE_PREFIX%cesqt_preguntas
+CREATE TABLE %TABLE_PREFIX%preguntas
 (
  id       INT NOT NULL AUTO_INCREMENT ,
  pregunta VARCHAR(500) NOT NULL ,
@@ -34,9 +34,9 @@ PRIMARY KEY (id)
 
 
 
--- ************************************** %TABLE_PREFIX%cesqt_resultados
+-- ************************************** %TABLE_PREFIX%resultados
 
-CREATE TABLE %TABLE_PREFIX%cesqt_resultados
+CREATE TABLE %TABLE_PREFIX%resultados
 (
  id               INT NOT NULL AUTO_INCREMENT ,
  pregunta         INT NOT NULL ,
@@ -46,9 +46,9 @@ CREATE TABLE %TABLE_PREFIX%cesqt_resultados
 
 PRIMARY KEY (id),
 KEY fkIdx_15 (pregunta),
-CONSTRAINT FK_15 FOREIGN KEY fkIdx_15 (pregunta) REFERENCES %TABLE_PREFIX%cesqt_preguntas (id) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FK_15 FOREIGN KEY fkIdx_15 (pregunta) REFERENCES %TABLE_PREFIX%preguntas (id) ON DELETE CASCADE ON UPDATE CASCADE,
 KEY fkIdx_18 (registro),
-CONSTRAINT FK_18 FOREIGN KEY fkIdx_18 (registro) REFERENCES %TABLE_PREFIX%cesqt_registros (id) ON DELETE CASCADE ON UPDATE CASCADE
+CONSTRAINT FK_18 FOREIGN KEY fkIdx_18 (registro) REFERENCES %TABLE_PREFIX%registros (id) ON DELETE CASCADE ON UPDATE CASCADE
 )%CHARSET_COLLATE%;
 
 
