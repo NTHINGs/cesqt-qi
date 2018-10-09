@@ -1,0 +1,83 @@
+<!-- PHP VARIABLES -->
+<!-- REQUEST_URI = URL para guardar el formulario -->
+<!-- PREGUNTAS = JSON STRING CON LAS PREGUNTAS -->
+<!-- ORG_ID = Hash de la empresa -->
+<!-- ORG_NAME = Nombre de la organizacion en base al link -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form id="formulario" class="row" action="%REQUEST_URI%" method="POST">
+                <input type="hidden" name="organizacion" value="%ORG_ID%" required>
+                <div class="col-12">
+                    <h1>Cuestionario de Calidad De Vida Laboral Para: %ORG_NAME%</h1>
+                    <h2>Instrucciones</h2>
+                    <p>
+                        Este estudio tiene como objetivo analizar cómo influye sobre la calidad de vida laboral fenómenos como el estrés laboral. Para ello, hemos elaborado un conjunto de escalas que, si son contestadas con sinceridad, nos permitirán comprender mejor esos procesos y su influencia sobre el trabajo.
+                        El cuestionario que usted rellene no será enseñado bajo ninguna razón o circunstancia a personas empleadas en su organización. Sólo tendrán acceso a su contenido los miembros del equipo de investigación. Todos los datos que refleje en él serán tratados confidencialmente. Su anonimato será mantenido en todo momento y los datos sólo se analizaran de forma agrupada.
+                        Es importante que responda a todas las cuestiones, pues las omisiones invalidan el conjunto de la escala a la que está respondiendo. Responda seleccionando la alternativa adecuada o escribiendo las respuestas en los espacios que preceden a las cuestiones, según proceda. Compruebe al final que ha contestado a todas las preguntas.
+                        Esperamos que comprenda la importancia de este estudio para el colectivo profesional del que forma parte y para futuras intervenciones que pueden mejorar su calidad de vida y la de sus compañeros de profesión. Por ello, le solicitamos su colaboración. Solo le llevará alrededor de 30 minutos contestarlo.
+                        Muchas gracias por el tiempo que va a dedicar a responder a este cuestionario.
+                    </p>
+                </div>
+                <section class="row">
+                    <p>
+                        En esta parte del cuestionario debe reflejar algunos datos personales. Con estos datos <strong>NO SE PRETENDE IDENTIFICARLE</strong>. Su objetivo es poder agrupar sus respuestas con la de otros profesionales de características similares a las suyas para ver si estas variables (por ejemplo: sexo, edad, antigüedad, tipo de servicio, etc. ) influyen sobre los niveles de estrés percibido.
+                    </p>
+                    <!-- <div class="form-group col-12">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div> -->
+                </section>
+                
+                <!-- <div class="form-group col-12">
+                    <label for="fechadenacimiento">Fecha de Nacimiento</label>
+                    <input id="fechadenacimiento" name="fechadenacimiento" required>
+                </div>
+                <div class="col-12">
+                    <span>Edad:
+                        <span id="edad-span"></span>
+                    </span>
+                    <input type="hidden" id="edad" name="edad">
+                </div>
+                <div class="col-12 pt-3">
+                    <h3>Preguntas</h3>
+                </div>
+                <div class="container-fluid pb-5">
+                    <div id="preguntas" class="container-fluid border"></div>
+                </div> -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" name="submitted">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function ($) {
+        var preguntas = JSON.parse('%PREGUNTAS%');
+        console.log(preguntas);
+        preguntas.forEach(function (pregunta, index, array) {
+            console.log(pregunta);
+            // var background = '';
+            // if (index % 2 !== 0) {
+            //     background = 'style="background: rgba(192,192,192,0.3);" ';
+            // }
+            // var div = '\
+            // <div ' + background + 'class="row pb-2 border-bottom">\
+            //     <div class="col-10">\
+            //         <label for="pregunta_' + pregunta.id + '">' + pregunta.pregunta + '</label> \
+            //     </div>\
+            //     <div class="col-1 form-check">\
+            //         <input class="form-check-input" type="radio" name="pregunta_' + pregunta.id + '" id="pregunta_' + pregunta.id + '_si" value="S">\
+            //         <label class="form-check-label" for="pregunta_' + pregunta.id + '_si">SI</label>\
+            //     </div>\
+            //     <div class="col-1 form-check">\
+            //         <input class="form-check-input" type="radio" name="pregunta_' + pregunta.id + '" id="pregunta_' + pregunta.id + '_no" value="N">\
+            //         <label class="form-check-label" for="pregunta_' + pregunta.id + '_no">NO</label>\
+            //     </div>\
+            // </div>';
+            // $("#preguntas").append(div);
+        });
+    });
+</script>
