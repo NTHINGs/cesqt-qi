@@ -95,7 +95,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
                     $tipos = array(
                         '%d',
                         '%d',
-                    )
+                    );
 
                     if (is_int($value) == true) {
                         $respuesta['respuesta'] = $value;
