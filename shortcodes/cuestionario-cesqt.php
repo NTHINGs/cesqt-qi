@@ -43,13 +43,18 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             );
 
             foreach($tipos_pregunta as $index => $row) {
-                $preguntas[$row['tipo']] = $wpdb->get_results(
+                $tipo_array = array();
+                $tipo_array['tipo'] = $row['tipo'];
+                $tipo_array['preguntas'] = $wpdb->get_results(
                     "SELECT * FROM $table_name WHERE tipo = '{$row['tipo']}'",
                     'ARRAY_A'
                 );
+                // $tipo_array['descripcion'] =
+
+                $preguntas[$index] = $tipo_array;
             }
 
-            echo print_r($preguntas);
+            echo json_encode($preguntas);
 
             $variables = array(
                 "%REQUEST_URI%",
