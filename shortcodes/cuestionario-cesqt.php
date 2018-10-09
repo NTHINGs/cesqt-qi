@@ -54,7 +54,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
                 $preguntas[$index] = $tipo_array;
             }
 
-            echo urldecode(json_encode($preguntas));
+            echo '<pre>' . json_encode($preguntas) . '</pre>';
 
             $variables = array(
                 "%REQUEST_URI%",
