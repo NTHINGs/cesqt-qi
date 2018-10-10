@@ -101,22 +101,18 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             foreach($_POST as $key => $value) {
                 if (strpos($key, 'pregunta_')>=0) {
                     $pregunta = array_pop(explode('pregunta_', $key));
+                    echo $pregunta;
                     $respuesta = array(
                         'pregunta'         => $pregunta,
                         'registro'         => $registro_id,
+                        'respuesta'        => $value,
                     );
                     $tipos = array(
                         '%d',
                         '%d',
+                        '%d',
                     );
 
-                    if (is_int($value) == true) {
-                        $respuesta['respuesta'] = $value;
-                        $tipos[2] = '%d';
-                    } else {
-                        $respuesta['respuesta_string'] = $value;
-                        $tipos[2] = '%s';
-                    }
                     $wpdb->insert( $resultados_table_name, $respuesta, $tipos);
                 }
             }

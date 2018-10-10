@@ -19,29 +19,7 @@
                         Muchas gracias por el tiempo que va a dedicar a responder a este cuestionario.
                     </p>
                 </div>
-                <section class="container-fluid border pb-5" id="preguntas">
-                    <!-- <div class="form-group col-12">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    </div> -->
-                </section>
-                
-                <!-- <div class="form-group col-12">
-                    <label for="fechadenacimiento">Fecha de Nacimiento</label>
-                    <input id="fechadenacimiento" name="fechadenacimiento" required>
-                </div>
-                <div class="col-12">
-                    <span>Edad:
-                        <span id="edad-span"></span>
-                    </span>
-                    <input type="hidden" id="edad" name="edad">
-                </div>
-                <div class="col-12 pt-3">
-                    <h3>Preguntas</h3>
-                </div>
-                <div class="container-fluid pb-5">
-                    <div id="preguntas" class="container-fluid border"></div>
-                </div> -->
+                <section class="container-fluid border pb-5" id="preguntas"></section>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" name="submitted">Guardar</button>
                 </div>
@@ -74,9 +52,9 @@
                 div += '\
                 <div ' + background + 'class="row pb-2 border-bottom">\
                     <div class="col-12 col-sm-6">\
-                        <label for="pregunta_' + pregunta.id + '_' + pregunta.inversa + '">' + pregunta.pregunta + '</label> \
+                        <label for="pregunta_' + pregunta.id + '">' + pregunta.pregunta + '</label> \
                     </div>\
-                    ' + construirOpciones(pregunta.posibles_respuestas, 'pregunta_' + pregunta.id + '_' + pregunta.inversa) + '\
+                    ' + construirOpciones(pregunta.posibles_respuestas, 'pregunta_' + pregunta.id) + '\
                 </div>';
             });
             div += '</div>';

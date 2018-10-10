@@ -75,7 +75,6 @@ CREATE TABLE %TABLE_PREFIX%resultados
  pregunta         INT NOT NULL ,
  registro         INT NOT NULL ,
  respuesta        INT NOT NULL ,
- respuesta_string VARCHAR(45) ,
 
 PRIMARY KEY (id),
 KEY fkIdx_15 (pregunta),
