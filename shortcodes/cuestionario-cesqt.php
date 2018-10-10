@@ -35,10 +35,12 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             echo 'LINK DE ORGANIZACION INCORRECTO';
         } else {
             global $wpdb;
-            $table_name = $wpdb->prefix . "cesqt_preguntas";
-            $preguntas = array();
+            $table_grupos = $wpdb->prefix . "cesqt_grupos";
+            $table_preguntas = $wpdb->prefix . "cesqt_preguntas";
+            $table_posibles_respuestas = $wpdb->prefix . "cesqt_posibles_respuestas";
+            $pregunas = array();
             $tipos_pregunta = $wpdb->get_results(
-                "SELECT DISTINCT tipo FROM $table_name", 
+                "SELECT * FROM $table_grupos", 
                 'ARRAY_A'
             );
 
@@ -46,10 +48,17 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
                 $tipo_array = array();
                 $tipo_array['tipo'] = $row['tipo'];
                 $tipo_array['preguntas'] = $wpdb->get_results(
-                    "SELECT * FROM $table_name WHERE tipo = '{$row['tipo']}'",
+                    "SELECT * FROM $table_preguntas WHERE tipo = '{$row['id']}'",
                     'ARRAY_A'
                 );
-                // $tipo_array['descripcion'] =
+
+                foreach($tipo_array['preguntas'] as $index2 => $row2) {
+                    $tipo_array['preguntas'][$index2]['posibles_respuestas'] = $wpdb->get_results(
+                        "SELECT * FROM $table_posibles_respuestas WHERE pregunta = '{$row2['id']}'",
+                        'ARRAY_A'
+                    );
+                }
+                $tipo_array['descripcion'] = $row['descripcion'];
 
                 $preguntas[$index] = $tipo_array;
             }
