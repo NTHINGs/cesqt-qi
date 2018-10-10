@@ -113,14 +113,15 @@
                                     <select class="form-control" id="'+ name + '" name="'+ name + '">\
                                     <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
                             break;
-                        } else if (index > 0 && index < array.length - 1) {
+                        } else if (index > 0 && index != array.length - 1) {
                             opciones += '\
                                 <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
                             break;
                         } else {
                             opciones += '\
-                                </select>\
-                                </div>';
+                                <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>\
+                            </select>\
+                            </div>';
                             break;
                         }
                 }
