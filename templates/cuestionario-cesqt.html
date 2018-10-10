@@ -56,18 +56,18 @@
         Object.keys(data).forEach(function (key, index, array) {
             var tipo = key;
             var descripcion = data[key].descripcion;
-            var background = '';
-            if (index % 2 !== 0) {
-                background = 'style="background: rgba(192,192,192,0.3);" ';
-            }
             // <h2>Instrucciones</h2>
             var div = '\
-            <div class="row">\
+            <div class="container-fluid">\
                 <div class="col-12">\
                     <p>' + descripcion + '</p>\
                 </div>';
             
             data[key].preguntas.forEach(function (pregunta, i, a) {
+                var background = '';
+                if (i % 2 !== 0) {
+                    background = 'style="background: rgba(192,192,192,0.3);" ';
+                }
                 div += '\
                 <div ' + background + 'class="row pb-2 border-bottom">\
                     <div class="col-12 col-sm-' + (12 - pregunta.posibles_respuestas.length) + '">\
