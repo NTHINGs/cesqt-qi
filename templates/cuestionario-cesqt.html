@@ -19,7 +19,7 @@
                         Muchas gracias por el tiempo que va a dedicar a responder a este cuestionario.
                     </p>
                 </div>
-                <section class="row" id="preguntas">
+                <section class="container-fluid border pb-5" id="preguntas">
                     <!-- <div class="form-group col-12">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -52,29 +52,76 @@
 
 <script>
     jQuery(document).ready(function ($) {
-        var preguntas = JSON.parse('%PREGUNTAS%');
-        $('#preguntas').html(JSON.stringify(preguntas));
-        preguntas.forEach(function (pregunta, index, array) {
-            console.log(pregunta);
-            // var background = '';
-            // if (index % 2 !== 0) {
-            //     background = 'style="background: rgba(192,192,192,0.3);" ';
-            // }
-            // var div = '\
-            // <div ' + background + 'class="row pb-2 border-bottom">\
-            //     <div class="col-10">\
-            //         <label for="pregunta_' + pregunta.id + '">' + pregunta.pregunta + '</label> \
-            //     </div>\
-            //     <div class="col-1 form-check">\
-            //         <input class="form-check-input" type="radio" name="pregunta_' + pregunta.id + '" id="pregunta_' + pregunta.id + '_si" value="S">\
-            //         <label class="form-check-label" for="pregunta_' + pregunta.id + '_si">SI</label>\
-            //     </div>\
-            //     <div class="col-1 form-check">\
-            //         <input class="form-check-input" type="radio" name="pregunta_' + pregunta.id + '" id="pregunta_' + pregunta.id + '_no" value="N">\
-            //         <label class="form-check-label" for="pregunta_' + pregunta.id + '_no">NO</label>\
-            //     </div>\
-            // </div>';
-            // $("#preguntas").append(div);
+        var data = JSON.parse('%DATA%');
+        Object.keys(data).forEach(function (key, index, array) {
+            var tipo = key;
+            var descripcion = data[key].descripcion;
+            var background = '';
+            if (index % 2 !== 0) {
+                background = 'style="background: rgba(192,192,192,0.3);" ';
+            }
+            // <h2>Instrucciones</h2>
+            var div = '\
+            <div class="row">\
+                <div class="col-12">\
+                    <p>' + descripcion + '</p>\
+                </div>';
+            
+            data[key].preguntas.forEach(function (pregunta, i, a) {
+                div += '\
+                <div ' + background + 'class="row pb-2 border-bottom">\
+                    <div class="col-12 col-sm-' + (12 - pregunta.posibles_respuestas.length) + '">\
+                        <label for="pregunta_' + pregunta.id + '_' + pregunta.inversa + '">' + pregunta.pregunta + '</label> \
+                    </div>\
+                    ' + construirOpciones(pregunta.posibles_respuestas, 'pregunta_' + pregunta.id + '_' + pregunta.inversa) + '\
+                </div>';
+            });
+            div += '</div>';
+                
+            $("#preguntas").append(div);
         });
+
+        function construirOpciones(posibles_respuestas, name) {
+            var opciones = '';
+            var select = false;
+            posibles_respuestas.forEach(function (posibles_respuesta, index, array) {
+                switch(posibles_respuesta.tipo) {
+                    case 'R':
+                        // Radio button
+                        opciones += '\
+                            <div class="col-1 form-check">\
+                                <input class="form-check-input" type="radio" name="'+ name + '" id="'+ name + '_' + index + '" value="'+ posibles_respuesta['valor'] + '">\
+                                <label class="form-check-label" for="'+ name + '">'+ posibles_respuesta['label'] + '</label>\
+                            </div>';
+                        break;
+                    case 'O':
+                        // Opcion abierta
+                        opciones += '\
+                            <div class="col-1">\
+                                <input type="number" class="form-control" id="'+ name + '" placeholder="'+ posibles_respuesta['label'] + '" name="'+ name + '">\
+                            </div>';
+                        break;
+                    case 'S':
+                        // Dropdown con opciones
+                        if(index === 0) {
+                            opciones += '\
+                                <div class="col-1">\
+                                    <select class="form-control" id="'+ name + '" name="'+ name + '">\
+                                    <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
+                            break;
+                        } else if (index > 0 && index < array.length - 1) {
+                            opciones += '\
+                                <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
+                            break;
+                        } else {
+                            opciones += '\
+                                </select>\
+                                </div>';
+                            break;
+                        }
+                }
+            });
+            return opciones;
+        }
     });
 </script>

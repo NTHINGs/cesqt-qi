@@ -52,7 +52,6 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
                 );
 
                 foreach($tipo_array['preguntas'] as $index2 => $row2) {
-                    unset($tipo_array['preguntas'][$index2]['id']);
                     $tipo_array['preguntas'][$index2]['posibles_respuestas'] = $wpdb->get_results(
                         "SELECT tipo, valor, label FROM $table_posibles_respuestas WHERE pregunta = '{$row2['id']}'",
                         'ARRAY_A'
@@ -65,7 +64,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
 
             $variables = array(
                 "%REQUEST_URI%",
-                "%PREGUNTAS%",
+                "%DATA%",
                 "%ORG_ID%",
                 "%ORG_NAME%"
             );
