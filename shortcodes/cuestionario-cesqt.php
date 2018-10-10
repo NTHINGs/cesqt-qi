@@ -38,7 +38,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             $table_grupos = $wpdb->prefix . "cesqt_grupos";
             $table_preguntas = $wpdb->prefix . "cesqt_preguntas";
             $table_posibles_respuestas = $wpdb->prefix . "cesqt_posibles_respuestas";
-            $pregunas = array();
+            $preguntas = array();
             $tipos_pregunta = $wpdb->get_results(
                 "SELECT * FROM $table_grupos", 
                 'ARRAY_A'
