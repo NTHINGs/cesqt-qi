@@ -1,10 +1,5 @@
 -- ****************** CESQT QI ******************;
 -- ***************************************************;
-DROP TABLE %TABLE_PREFIX%registros;
-DROP TABLE %TABLE_PREFIX%grupos;
-DROP TABLE %TABLE_PREFIX%preguntas;
-DROP TABLE %TABLE_PREFIX%posibles_respuestas;
-DROP TABLE %TABLE_PREFIX%resultados;
 -- ************************************** %TABLE_PREFIX%registros
 
 CREATE TABLE %TABLE_PREFIX%registros
@@ -28,7 +23,7 @@ CREATE TABLE %TABLE_PREFIX%grupos
  nombre       VARCHAR(50) ,
  descripcion  VARCHAR(200) ,
 
-PRIMARY KEY (id),
+PRIMARY KEY (id)
 )%CHARSET_COLLATE%;
 
 
@@ -46,7 +41,7 @@ CREATE TABLE %TABLE_PREFIX%preguntas
 
 PRIMARY KEY (id),
 KEY fkIdx_20 (grupo),
-CONSTRAINT FK_20 FOREIGN KEY fkIdx_20 (grupo) REFERENCES %TABLE_PREFIX%grupos (id) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FK_20 FOREIGN KEY fkIdx_20 (grupo) REFERENCES %TABLE_PREFIX%grupos (id) ON DELETE CASCADE ON UPDATE CASCADE
 )%CHARSET_COLLATE%;
 
 
@@ -65,7 +60,7 @@ CREATE TABLE %TABLE_PREFIX%posibles_respuestas
 
 PRIMARY KEY (id),
 KEY fkIdx_21 (pregunta),
-CONSTRAINT FK_21 FOREIGN KEY fkIdx_21 (pregunta) REFERENCES %TABLE_PREFIX%preguntas (id) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FK_21 FOREIGN KEY fkIdx_21 (pregunta) REFERENCES %TABLE_PREFIX%preguntas (id) ON DELETE CASCADE ON UPDATE CASCADE
 )%CHARSET_COLLATE%;
 
 
