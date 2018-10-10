@@ -46,9 +46,9 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
 
             foreach($tipos_pregunta as $index => $row) {
                 $tipo_array = array();
-                $tipo_array['tipo'] = $row['tipo'];
+                $tipo_array['grupo'] = $row['nombre'];
                 $tipo_array['preguntas'] = $wpdb->get_results(
-                    "SELECT * FROM $table_preguntas WHERE tipo = '{$row['id']}'",
+                    "SELECT * FROM $table_preguntas WHERE grupo = '{$row['id']}'",
                     'ARRAY_A'
                 );
 
