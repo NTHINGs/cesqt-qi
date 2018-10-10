@@ -71,7 +71,7 @@
                         // Opcion abierta
                         opciones += '\
                             <div class="col-12 col-sm-6">\
-                                <input type="number" min="0" step="1" class="form-control" id="'+ name + '" placeholder="'+ posibles_respuesta['label'] + '" name="'+ name + '">\
+                                <input type="number" min="0" step="1" pattern="\d*" title="Solo se aceptan valores enteros (sin decimales)" class="form-control" id="'+ name + '" placeholder="'+ posibles_respuesta['label'] + '" name="'+ name + '">\
                             </div>';
                         break;
                     case 'S':
