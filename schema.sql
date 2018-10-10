@@ -55,7 +55,7 @@ CREATE TABLE %TABLE_PREFIX%posibles_respuestas
  id           INT NOT NULL AUTO_INCREMENT ,
  tipo         CHAR NOT NULL,
  valor        INT ,
- label        VARCHAR(100) NOT NULL ,
+ label        VARCHAR(250) NOT NULL ,
  pregunta     INT NOT NULL ,
 
 PRIMARY KEY (id),
