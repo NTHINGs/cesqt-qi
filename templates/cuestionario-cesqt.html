@@ -89,7 +89,7 @@
                     case 'R':
                         // Radio button
                         opciones += '\
-                            <div class="col-1 form-check">\
+                            <div class="col-' + (6 - array.length) + ' form-check">\
                                 <input class="form-check-input" type="radio" name="'+ name + '" id="'+ name + '_' + index + '" value="'+ posibles_respuesta['valor'] + '">\
                                 <label class="form-check-label" for="'+ name + '">'+ posibles_respuesta['label'] + '</label>\
                             </div>';
@@ -97,7 +97,7 @@
                     case 'O':
                         // Opcion abierta
                         opciones += '\
-                            <div class="col-1">\
+                            <div class="col-5">\
                                 <input type="number" class="form-control" id="'+ name + '" placeholder="'+ posibles_respuesta['label'] + '" name="'+ name + '">\
                             </div>';
                         break;
@@ -105,7 +105,7 @@
                         // Dropdown con opciones
                         if(index === 0) {
                             opciones += '\
-                                <div class="col-1">\
+                                <div class="col-5">\
                                     <select class="form-control" id="'+ name + '" name="'+ name + '">\
                                     <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
                             break;
