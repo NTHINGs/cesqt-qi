@@ -29,9 +29,8 @@ function cesqt_admin_tabs( $current = 'INFORMACION' ) {
     echo '<div id="icon-themes" class="icon32"><br></div>';
     echo '<h2 class="nav-tab-wrapper">';
     foreach( $grupos as $index => $row ){
-        $class = ( $row['nombre'] == $current ) ? ' nav-tab-active' : ’;
+        $class = ( $row['nombre'] == $current ) ? ' nav-tab-active' : '';
         echo '<a class="nav-tab'. $class. '" href="?page=cuestionario-cesqt&tab=' . $row['nombre'] . '">' . $row['nombrelimpio'] . '</a>';
-
     }
     echo '</h2>';
 }
