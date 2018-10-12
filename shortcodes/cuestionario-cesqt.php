@@ -101,7 +101,6 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             foreach($_POST as $key => $value) {
                 if (strpos($key, 'pregunta_')>=0) {
                     $pregunta = array_pop(explode('pregunta_', $key));
-                    echo $pregunta;
                     $respuesta = array(
                         'pregunta'         => $pregunta,
                         'registro'         => $registro_id,
