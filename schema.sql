@@ -21,7 +21,7 @@ CREATE TABLE %TABLE_PREFIX%grupos
 (
  id           INT NOT NULL AUTO_INCREMENT ,
  nombre       VARCHAR(50) ,
- nombrelimpio VARCHAR(100)
+ nombrelimpio VARCHAR(100) ,
  descripcion  VARCHAR(1000) ,
 
 PRIMARY KEY (id)
