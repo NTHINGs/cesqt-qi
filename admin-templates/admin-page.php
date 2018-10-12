@@ -1,158 +1,162 @@
 <?php
+
 /**
- * Mostrar menu en wp-admin
- *
- *
- * @package	 resiliencia-qi
- * @since    1.0.0
+ * cesqt Tabbed Settings Page
  */
-if ( file_exists( RES_PLUGIN_PATH . 'util/util.php' ) ) {
-	require_once( RES_PLUGIN_PATH . 'util/util.php' );
-}
-if(!class_exists('Resultados_Resiliencia_Table')){
-    require_once( RES_PLUGIN_PATH . 'util/Resultados_Resiliencia_Table.php' );
-}
-if(!class_exists('Orgs_Resiliencia_Table')){
-    require_once( RES_PLUGIN_PATH . 'util/Orgs_Resiliencia_Table.php' );
-}
-// Creando Página en dashboard
-add_filter( 'set-screen-option', 'set_screen', 10, 3 );
-add_action( 'admin_menu', 'resiliencia_qi_admin' );
 
-function resiliencia_qi_admin() {
-    $hook = add_menu_page(
-        'Cuestionario Resiliencia',     // page title
-        'Cuestionario Resiliencia',     // menu title
-        'resiliencia',   // capability
-        'cuestionario-resiliencia',     // menu slug
-		'render_resiliencia_qi_admin', // callback function
-		'dashicons-universal-access'
-    );
-    add_action( "load-$hook", 'screen_option' );
+add_action( 'init', 'cesqt_admin_init' );
+add_action( 'admin_menu', 'cesqt_settings_page_init' );
 
-    add_submenu_page(
-        null,
-        'Resultados Individuales', //page title
-        'Resultados Individuales', //menu title
-        'resiliencia', //capability,
-        'resultados-individuales',//menu slug
-        'render_resiliencia_resultados_individuales' //callback function
-    );
-
-    $hook2 = add_submenu_page(
-        null,
-        'Resultados De Tu Organización', //page title
-        'Resultados De Tu Organización', //menu title
-        'resiliencia', //capability,
-        'resultados-organizacionales',//menu slug
-        'render_resiliencia_admin_org' //callback function
-    );
-    add_action( "load-$hook2", 'screen_option' );
+function cesqt_admin_init() {
+	$settings = get_option( "cesqt_theme_settings" );
+	if ( empty( $settings ) ) {
+		$settings = array(
+			'cesqt_intro' => 'Some intro text for the home page',
+			'cesqt_tag_class' => false,
+			'cesqt_ga' => false
+		);
+		add_option( "cesqt_theme_settings", $settings, '', 'yes' );
+	}	
 }
-function render_resiliencia_qi_admin() {
-    global $title;
+
+function cesqt_settings_page_init() {
+	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css' );
+	$settings_page = add_theme_page( $theme_data['Name']. ' Theme Settings', $theme_data['Name']. ' Theme Settings', 'edit_theme_options', 'theme-settings', 'cesqt_settings_page' );
+	add_action( "load-{$settings_page}", 'cesqt_load_settings_page' );
+}
+
+function cesqt_load_settings_page() {
+	if ( $_POST["cesqt-settings-submit"] == 'Y' ) {
+		check_admin_referer( "cesqt-settings-page" );
+		cesqt_save_theme_settings();
+		$url_parameters = isset($_GET['tab'])? 'updated=true&tab='.$_GET['tab'] : 'updated=true';
+		wp_redirect(admin_url('themes.php?page=theme-settings&'.$url_parameters));
+		exit;
+	}
+}
+
+function cesqt_save_theme_settings() {
+	global $pagenow;
+	$settings = get_option( "cesqt_theme_settings" );
 	
-	if (current_user_can('resiliencia') && !current_user_can('resiliencia_admin')) {
-        // Render pagina de organizacion
-        render_resiliencia_admin_org(get_user_hash());
-	} elseif (current_user_can('resiliencia_admin')) {
-        // Render pagina de todas las organizaciones
-        $variables = array(
-            "%TITLE%",
-        );
-        $values = array(
-            $title,
-        );
-        print str_replace($variables, $values, file_get_contents(  RES_PLUGIN_PATH . "templates/resultados-generales.html" ));
-        render_table_orgs();
+	if ( $pagenow == 'themes.php' && $_GET['page'] == 'theme-settings' ){ 
+		if ( isset ( $_GET['tab'] ) )
+	        $tab = $_GET['tab']; 
+	    else
+	        $tab = 'homepage'; 
+
+	    switch ( $tab ){ 
+	        case 'general' :
+				$settings['cesqt_tag_class']	  = $_POST['cesqt_tag_class'];
+			break; 
+	        case 'footer' : 
+				$settings['cesqt_ga']  = $_POST['cesqt_ga'];
+			break;
+			case 'homepage' : 
+				$settings['cesqt_intro']	  = $_POST['cesqt_intro'];
+			break;
+	    }
 	}
 	
+	if( !current_user_can( 'unfiltered_html' ) ){
+		if ( $settings['cesqt_ga']  )
+			$settings['cesqt_ga'] = stripslashes( esc_textarea( wp_filter_post_kses( $settings['cesqt_ga'] ) ) );
+		if ( $settings['cesqt_intro'] )
+			$settings['cesqt_intro'] = stripslashes( esc_textarea( wp_filter_post_kses( $settings['cesqt_intro'] ) ) );
+	}
+
+	$updated = update_option( "cesqt_theme_settings", $settings );
 }
 
-function render_resiliencia_admin_org($org_id=NULL) {
-    if( isset($_GET['org_id']) ){
-        $org_id = $_GET['org_id'];
+function cesqt_admin_tabs( $current = 'homepage' ) { 
+    $tabs = array( 'homepage' => 'Home', 'general' => 'General', 'footer' => 'Footer' ); 
+    $links = array();
+    echo '<div id="icon-themes" class="icon32"><br></div>';
+    echo '<h2 class="nav-tab-wrapper">';
+    foreach( $tabs as $tab => $name ){
+        $class = ( $tab == $current ) ? ' nav-tab-active' : '';
+        echo "<a class='nav-tab$class' href='?page=theme-settings&tab=$tab'>$name</a>";
+        
     }
-    if($org_id != NULL) {
-        $variables = array(
-            "%TITLE%",
-            "%SITE_URL%",
-            "%HASH%",
-        );
-        $values = array(
-            get_users(
-                array(
-                    'role' => 'empresa',
-                    'hash' => $org_id,
-                )
-            )[0]->display_name,
-            get_site_url(),
-            $org_id,
-        );
-        print str_replace($variables, $values, file_get_contents(  RES_PLUGIN_PATH . "templates/resultados-organizacion.html" ));
-        print do_shortcode('[resultados-cuestionario org_id="' . $org_id . '"]');
-        print '</div>';
-        print '<h2>Resultados</h2>';
-        render_table_resultados($org_id);
-    } else {
-        print 'ERROR ORG_ID NO ESTA DEFINIDO';
-    }
-    
+    echo '</h2>';
 }
 
-function render_table_resultados($org_id) {
-    print '<div id="poststuff">';
+function cesqt_settings_page() {
+	global $pagenow;
+	$settings = get_option( "cesqt_theme_settings" );
+	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css' );
+	?>
+	
+	<div class="wrap">
+		<h2><?php echo $theme_data['Name']; ?> Theme Settings</h2>
+		
+		<?php
+			if ( 'true' == esc_attr( $_GET['updated'] ) ) echo '<div class="updated" ><p>Theme Settings updated.</p></div>';
+			
+			if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('homepage');
+		?>
 
-    print '<form method="post">';
-    $wp_list_table = new Resultados_Resiliencia_Table();
-    if( isset($_POST['s']) ){
-        $wp_list_table->prepare_items($_POST['s'], $org_id);
-    } else {
-        $wp_list_table->prepare_items(null, $org_id);
-    }
-    $wp_list_table->search_box( 'Buscar', 'search_id' ); 
-    $wp_list_table->display();
-    print '</form>';
-    print '</div>';
+		<div id="poststuff">
+			<form method="post" action="<?php admin_url( 'themes.php?page=theme-settings' ); ?>">
+				<?php
+				wp_nonce_field( "cesqt-settings-page" ); 
+				
+				if ( $pagenow == 'themes.php' && $_GET['page'] == 'theme-settings' ){ 
+				
+					if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; 
+					else $tab = 'homepage'; 
+					
+					echo '<table class="form-table">';
+					switch ( $tab ){
+						case 'general' :
+							?>
+							<tr>
+								<th><label for="cesqt_tag_class">Tags with CSS classes:</label></th>
+								<td>
+									<input id="cesqt_tag_class" name="cesqt_tag_class" type="checkbox" <?php if ( $settings["cesqt_tag_class"] ) echo 'checked="checked"'; ?> value="true" /> 
+									<span class="description">Output each post tag with a specific CSS class using its slug.</span>
+								</td>
+							</tr>
+							<?php
+						break; 
+						case 'footer' : 
+							?>
+							<tr>
+								<th><label for="cesqt_ga">Insert tracking code:</label></th>
+								<td>
+									<textarea id="cesqt_ga" name="cesqt_ga" cols="60" rows="5"><?php echo esc_html( stripslashes( $settings["cesqt_ga"] ) ); ?></textarea><br/>
+									<span class="description">Enter your Google Analytics tracking code:</span>
+								</td>
+							</tr>
+							<?php
+						break;
+						case 'homepage' : 
+							?>
+							<tr>
+								<th><label for="cesqt_intro">Introduction</label></th>
+								<td>
+									<textarea id="cesqt_intro" name="cesqt_intro" cols="60" rows="5" ><?php echo esc_html( stripslashes( $settings["cesqt_intro"] ) ); ?></textarea><br/>
+									<span class="description">Enter the introductory text for the home page:</span>
+								</td>
+							</tr>
+							<?php
+						break;
+					}
+					echo '</table>';
+				}
+				?>
+				<p class="submit" style="clear: both;">
+					<input type="submit" name="Submit"  class="button-primary" value="Update Settings" />
+					<input type="hidden" name="cesqt-settings-submit" value="Y" />
+				</p>
+			</form>
+			
+			<p><?php echo $theme_data['Name'] ?> theme by <a href="http://ilovecolors.com.ar/">ilovecolors.com.ar</a> | <a href="http://twitter.com/eliorivero">Follow me on Twitter</a>! | Join <a href="http://on.fb.me/cesqtfb">ilovecolors on Facebook</a>!</p>
+		</div>
+
+	</div>
+<?php
 }
 
-function render_table_orgs() {
-    print '<div id="poststuff">';
 
-    print '<form method="post">';
-    $wp_list_table = new Orgs_Resiliencia_Table();
-    if( isset($_POST['s']) ){
-        $wp_list_table->prepare_items($_POST['s']);
-    } else {
-        $wp_list_table->prepare_items();
-    }
-    $wp_list_table->search_box( 'Buscar', 'search_id' ); 
-    $wp_list_table->display();
-    print '</form>';
-    print '</div>';
-}
-
-function set_screen( $status, $option, $value ) {
-	return $value;
-}
-
-function screen_option() {
-
-	$option = 'per_page';
-	$args   = [
-		'label'   => 'Resultados',
-		'default' => 10,
-		'option'  => 'resultados_per_page'
-	];
-
-	add_screen_option( $option, $args );
-}
-
-function render_resiliencia_resultados_individuales() {
-    if(isset($_GET['registro'])){
-        echo '<a href="' . add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=resultados-organizacionales')) . '"><- Volver a la lista </a>';
-        echo do_shortcode('[resultados-cuestionario cuestionario_id="' . $_GET['registro'] . '"]');
-    } else {
-        echo 'ERROR NO SE ESPECIFICO EL CUESTIONARIO PARA VER RESULTADOS';
-    }
-}
+?>

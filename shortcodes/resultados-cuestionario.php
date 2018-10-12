@@ -2,9 +2,9 @@
 /**
  * Mostrar resultados del cuestionario
  *
- * [resultados-cuestionario]
+ * [resultados-cuestionario-cesqt]
  *
- * @package	 resiliencia-qi
+ * @package	 cesqt-qi
  * @since    1.0.0
  */
 if ( file_exists( RES_PLUGIN_PATH . 'util/util.php' ) ) {
@@ -14,11 +14,11 @@ if ( ! function_exists( 'resultados_cuestionario_shortcode' ) ) {
 	// Add the action.
 	add_action( 'plugins_loaded', function() {
 		// Add the shortcode.
-		add_shortcode( 'resultados-cuestionario', 'resultados_cuestionario_shortcode' );
+		add_shortcode( 'resultados-cuestionario-cesqt', 'resultados_cuestionario_shortcode' );
 	});
 
 	/**
-	 * resultados-cuestionario shortcode.
+	 * resultados-cuestionario-cesqt shortcode.
 	 *
 	 * @return string
 	 * @since  1.0.0
@@ -38,15 +38,15 @@ if ( ! function_exists( 'resultados_cuestionario_shortcode' ) ) {
         $org_id = $_atts['org_id'];
         if ($cuestionario_id != NULL) {
             // Resultados individuales
-            echo resultados_por_cuestionario_resiliencia($cuestionario_id);
+            echo resultados_por_cuestionario_cesqt($cuestionario_id);
         } elseif ($org_id != NULL) {
-            echo resultados_por_organizacion_resiliencia($org_id);
+            echo resultados_por_organizacion_cesqt($org_id);
         } else {
             echo 'ERROR: El shortcode tiene parametros incorrectos.';
         }
     }
     
-    function resultados_por_cuestionario_resiliencia($cuestionario_id) {
+    function resultados_por_cuestionario_cesqt($cuestionario_id) {
         $variables = array(
             '%DATA%',
             '%RESULTADOS%',
@@ -66,11 +66,11 @@ if ( ! function_exists( 'resultados_cuestionario_shortcode' ) ) {
             600,
         );
         
-        return str_replace($variables, $values, file_get_contents( plugin_dir_path( __DIR__ ) . "/templates/resultados-cuestionario-individuales.html" ));
+        return str_replace($variables, $values, file_get_contents( plugin_dir_path( __DIR__ ) . "/templates/resultados-cuestionario-cesqt-individuales.html" ));
     }
 
 
-    function resultados_por_organizacion_resiliencia($org_id) {
+    function resultados_por_organizacion_cesqt($org_id) {
         $variables = array(
             '%DATA%',
             '%RESULTADOS%',
@@ -90,7 +90,7 @@ if ( ! function_exists( 'resultados_cuestionario_shortcode' ) ) {
             40,
         );
         
-        return str_replace($variables, $values, file_get_contents( plugin_dir_path( __DIR__ ) . "/templates/resultados-cuestionario-individuales.html" ));
+        return str_replace($variables, $values, file_get_contents( plugin_dir_path( __DIR__ ) . "/templates/resultados-cuestionario-cesqt-individuales.html" ));
     }
 
 }

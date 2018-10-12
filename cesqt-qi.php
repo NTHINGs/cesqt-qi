@@ -49,9 +49,9 @@ if ( file_exists( CESQT_PLUGIN_PATH . 'shortcodes/cuestionario-cesqt.php' ) ) {
 // 	require_once( CESQT_PLUGIN_PATH . 'shortcodes/resultados-cuestionario.php' );
 // }
 
-// if ( file_exists( CESQT_PLUGIN_PATH . 'admin-templates/admin-page.php' ) ) {
-// 	require_once( CESQT_PLUGIN_PATH . 'admin-templates/admin-page.php' );
-// }
+if ( file_exists( CESQT_PLUGIN_PATH . 'admin-templates/admin-page.php' ) ) {
+	require_once( CESQT_PLUGIN_PATH . 'admin-templates/admin-page.php' );
+}
 
 add_action('wp_enqueue_scripts','cesqt_qi_init');
 

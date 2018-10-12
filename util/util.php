@@ -37,7 +37,7 @@ function get_user_hash() {
     return $hash;
 }
 
-function get_resultados($cuestionario_id) {
+function get_resultados_cesqt($cuestionario_id) {
     global $wpdb, $obj;
     $resultados = array();
 
@@ -60,7 +60,7 @@ function get_resultados($cuestionario_id) {
     return $resultados;
 }
 
-function get_resultados_por_org($org_id) {
+function get_resultados_por_org_cesqt($org_id) {
     global $wpdb, $obj;
     $resultados = array();
 
@@ -86,7 +86,7 @@ function get_resultados_por_org($org_id) {
     return $resultados;
 }
 
-function calcular_rango($grupo, $puntaje) {
+function calcular_rango_cesqt($grupo, $puntaje) {
     $puntajes = array(
         'autoestima' => array(
             'Alto' => array(
@@ -178,7 +178,7 @@ function calcular_rango($grupo, $puntaje) {
     }
 }
 
-function calcular_total($resultados) {
+function calcular_total_cesqt($resultados) {
     $total = 0;
     foreach ($resultados as $resultado) {
         $total += (int)$resultado;
