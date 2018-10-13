@@ -31,7 +31,6 @@
 <script>
     jQuery(document).ready(function ($) {
         var data = JSON.parse('%DATA%');
-        console.log(data);
         Object.keys(data).forEach(function (key, index, array) {
             var tipo = key;
             var descripcion = data[key].descripcion;
