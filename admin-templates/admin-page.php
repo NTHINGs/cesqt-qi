@@ -117,105 +117,105 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 }
             });
 
-            var ctx_estado_civil = document.getElementById("estado_civil").getContext("2d");
-            // ctx_estado_civil.canvas.height = 400;
-            ctx_estado_civil.canvas.width = document.getElementById('result-container').innerWidth;
-            var grafica_estado_civil = new Chart(ctx_estado_civil, {
-                type: 'pie',
-                data: {
-                    labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
-                    datasets: [{
-                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
-                    }]
-                }
-            });
+            // var ctx_estado_civil = document.getElementById("estado_civil").getContext("2d");
+            // // ctx_estado_civil.canvas.height = 400;
+            // ctx_estado_civil.canvas.width = document.getElementById('result-container').innerWidth;
+            // var grafica_estado_civil = new Chart(ctx_estado_civil, {
+            //     type: 'pie',
+            //     data: {
+            //         labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
+            //         datasets: [{
+            //             data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
+            //         }]
+            //     }
+            // });
 
-            var ctx_tipo_contrato = document.getElementById("tipo_contrato").getContext("2d");
-            // ctx_tipo_contrato.canvas.height = 400;
-            ctx_tipo_contrato.canvas.width = document.getElementById('result-container').innerWidth;
-            var grafica_tipo_contrato = new Chart(ctx_tipo_contrato, {
-                type: 'pie',
-                data: {
-                    labels:  [
-                        'Contrato Por Tiempo Indefinido', 
-                        'Contrato Por Tiempo Determinado', 
-                        'Contrato A Prueba',
-                        'Contrato Por Hora',
-                        'Contrato De Capacitación Inicial',
-                    ],
-                    datasets: [{
-                        data: JSON.parse('<?php 
-                            echo json_encode(
-                                array(
-                                    get_resultados_pregunta_exactos($org_id, 6, 1), 
-                                    get_resultados_pregunta_exactos($org_id, 6, 2),
-                                    get_resultados_pregunta_exactos($org_id, 6, 3),
-                                    get_resultados_pregunta_exactos($org_id, 6, 4),
-                                    get_resultados_pregunta_exactos($org_id, 6, 5),
-                                )
-                            );
-                            ?>'),
-                    }]
-                }
-            });
+            // var ctx_tipo_contrato = document.getElementById("tipo_contrato").getContext("2d");
+            // // ctx_tipo_contrato.canvas.height = 400;
+            // ctx_tipo_contrato.canvas.width = document.getElementById('result-container').innerWidth;
+            // var grafica_tipo_contrato = new Chart(ctx_tipo_contrato, {
+            //     type: 'pie',
+            //     data: {
+            //         labels:  [
+            //             'Contrato Por Tiempo Indefinido', 
+            //             'Contrato Por Tiempo Determinado', 
+            //             'Contrato A Prueba',
+            //             'Contrato Por Hora',
+            //             'Contrato De Capacitación Inicial',
+            //         ],
+            //         datasets: [{
+            //             data: JSON.parse('<?php 
+            //                 echo json_encode(
+            //                     array(
+            //                         get_resultados_pregunta_exactos($org_id, 6, 1), 
+            //                         get_resultados_pregunta_exactos($org_id, 6, 2),
+            //                         get_resultados_pregunta_exactos($org_id, 6, 3),
+            //                         get_resultados_pregunta_exactos($org_id, 6, 4),
+            //                         get_resultados_pregunta_exactos($org_id, 6, 5),
+            //                     )
+            //                 );
+            //                 ?>'),
+            //         }]
+            //     }
+            // });
 
-            var ctx_años_de_experiencia = document.getElementById("años_de_experiencia").getContext("2d");
-            // ctx_años_de_experiencia.canvas.height = 400;
-            ctx_años_de_experiencia.canvas.width = document.getElementById('result-container').innerWidth;
-            var grafica_años_de_experiencia = new Chart(ctx_años_de_experiencia, {
-                type: 'bar',
-                data: {
-                    labels:  [
-                        'Años Promedio En La Profesión', 
-                        'Años Promedio En La Organización', 
-                        'Años Promedio En El Puesto De Trabajo', 
-                    ],
-                    datasets: [{
-                        data: JSON.parse('<?php 
-                            echo json_encode(
-                                array(
-                                    get_promedio_pregunta($org_id, 7),
-                                    get_promedio_pregunta($org_id, 8),
-                                    get_promedio_pregunta($org_id, 9),
-                                )
-                            );
-                            ?>'),
-                    }]
-                }
-            });
+            // var ctx_años_de_experiencia = document.getElementById("años_de_experiencia").getContext("2d");
+            // // ctx_años_de_experiencia.canvas.height = 400;
+            // ctx_años_de_experiencia.canvas.width = document.getElementById('result-container').innerWidth;
+            // var grafica_años_de_experiencia = new Chart(ctx_años_de_experiencia, {
+            //     type: 'bar',
+            //     data: {
+            //         labels:  [
+            //             'Años Promedio En La Profesión', 
+            //             'Años Promedio En La Organización', 
+            //             'Años Promedio En El Puesto De Trabajo', 
+            //         ],
+            //         datasets: [{
+            //             data: JSON.parse('<?php 
+            //                 echo json_encode(
+            //                     array(
+            //                         get_promedio_pregunta($org_id, 7),
+            //                         get_promedio_pregunta($org_id, 8),
+            //                         get_promedio_pregunta($org_id, 9),
+            //                     )
+            //                 );
+            //                 ?>'),
+            //         }]
+            //     }
+            // });
 
-            var ctx_grados_estudio = document.getElementById("grados_estudio").getContext("2d");
-            // ctx_grados_estudio.canvas.height = 400;
-            ctx_grados_estudio.canvas.width = document.getElementById('result-container').innerWidth;
-            var grafica_grados_estudio = new Chart(ctx_grados_estudio, {
-                type: 'pie',
-                data: {
-                    labels:  [
-                        'Ninguno', 
-                        'Primaria', 
-                        'Secundaria', 
-                        'Preparatoria', 
-                        'Licenciatura', 
-                        'Maestría', 
-                        'Doctorado', 
-                    ],
-                    datasets: [{
-                        data: JSON.parse('<?php 
-                            echo json_encode(
-                                array(
-                                    get_resultados_pregunta_exactos($org_id, 10, 1), 
-                                    get_resultados_pregunta_exactos($org_id, 10, 2),
-                                    get_resultados_pregunta_exactos($org_id, 10, 3),
-                                    get_resultados_pregunta_exactos($org_id, 10, 4),
-                                    get_resultados_pregunta_exactos($org_id, 10, 5),
-                                    get_resultados_pregunta_exactos($org_id, 10, 6),
-                                    get_resultados_pregunta_exactos($org_id, 10, 7),
-                                )
-                            );
-                            ?>'),
-                    }]
-                }
-            });
+            // var ctx_grados_estudio = document.getElementById("grados_estudio").getContext("2d");
+            // // ctx_grados_estudio.canvas.height = 400;
+            // ctx_grados_estudio.canvas.width = document.getElementById('result-container').innerWidth;
+            // var grafica_grados_estudio = new Chart(ctx_grados_estudio, {
+            //     type: 'pie',
+            //     data: {
+            //         labels:  [
+            //             'Ninguno', 
+            //             'Primaria', 
+            //             'Secundaria', 
+            //             'Preparatoria', 
+            //             'Licenciatura', 
+            //             'Maestría', 
+            //             'Doctorado', 
+            //         ],
+            //         datasets: [{
+            //             data: JSON.parse('<?php 
+            //                 echo json_encode(
+            //                     array(
+            //                         get_resultados_pregunta_exactos($org_id, 10, 1), 
+            //                         get_resultados_pregunta_exactos($org_id, 10, 2),
+            //                         get_resultados_pregunta_exactos($org_id, 10, 3),
+            //                         get_resultados_pregunta_exactos($org_id, 10, 4),
+            //                         get_resultados_pregunta_exactos($org_id, 10, 5),
+            //                         get_resultados_pregunta_exactos($org_id, 10, 6),
+            //                         get_resultados_pregunta_exactos($org_id, 10, 7),
+            //                     )
+            //                 );
+            //                 ?>'),
+            //         }]
+            //     }
+            // });
         </script>
         <?php
     }
