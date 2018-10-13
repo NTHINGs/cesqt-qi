@@ -248,7 +248,6 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
         AND RS.respuesta = $respuesta"
     );
 
-    echo $cantidad;
     if ($cantidad > 0) {
         return $cantidad;
     } else {
