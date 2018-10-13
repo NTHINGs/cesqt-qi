@@ -65,10 +65,8 @@ function cesqt_qi_admin_graficas($grupo, $org_id) {
     $table_grupos = $wpdb->prefix . "cesqt_grupos";
     $title = $wpdb->get_var("SELECT nombrelimpio FROM $table_grupos WHERE nombre='$grupo' ");
     echo '<h1>' . $title . '</h1>';
-    if ($grupo == 'INFORMACION') {
+    if ($grupo == 'INFORMACION' || $grupo == 'ALCOHOLISMO_Y_TABAQUISMO') {
         construir_datos_grafica_especial($grupo, $org_id);
-    } elseif($grupo == 'ALCOHOLISMO_Y_TABAQUISMO') {
-        echo 'CONSTRUYENDO';
     } else {
         $chart_data = construir_datos_grafica($grupo, $org_id);
         $variables = array(
