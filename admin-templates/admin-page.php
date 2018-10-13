@@ -180,6 +180,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                         'Años Promedio En El Puesto De Trabajo', 
                     ],
                     datasets: [{
+                        label: 'Años',
                         data: JSON.parse('<?php 
                             echo json_encode(
                                 array(
@@ -241,7 +242,7 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
         AND R.organizacion = $org_id 
-        AND P.pregunta = $pregunta
+        AND RS.pregunta = $pregunta
         AND RS.respuesta = $respuesta"
     );
     if ($cantidad > 0) {
@@ -262,7 +263,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
         AND R.organizacion = $org_id 
-        AND P.pregunta = $pregunta"
+        AND RS.pregunta = $pregunta"
     );
     
     $suma = $wpdb->get_var(
@@ -270,7 +271,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
         AND R.organizacion = $org_id 
-        AND P.pregunta = $pregunta"
+        AND RS.pregunta = $pregunta"
     );
     
     if ($cantidad > 0) {
