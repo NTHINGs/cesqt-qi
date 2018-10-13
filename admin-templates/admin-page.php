@@ -233,6 +233,7 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
 }
 
 function get_promedio_pregunta($org_id, $pregunta) {
+    echo 'ESTOY AQUI';
     $cantidad = $wpdb->get_var(
         "SELECT COUNT(*) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
