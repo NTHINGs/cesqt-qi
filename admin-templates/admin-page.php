@@ -77,9 +77,9 @@ function cesqt_qi_admin_graficas($grupo, $org_id) {
             '%COLORS%',
         );
         $values = array(
-            $chart_data['labels'], 
-            $chart_data['data'],
-            $chart_data['colors'],
+            json_encode($chart_data['labels']), 
+            json_encode($chart_data['data']),
+            json_encode($chart_data['colors']),
         );
         echo str_replace($variables, $values, file_get_contents(  CESQT_PLUGIN_PATH . "templates/cesqt_qi_admin_graficas.html" ));
     }
