@@ -42,7 +42,9 @@ function render_cesqt_qi_admin() {
 	?>
 	
 	<div class="wrap">
-		<h2><?php echo $title; ?></h2>
+        <h2><?php echo $title; ?></h2>
+        <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
+        <a href="/cuestionario-cesqt/?org_id=%HASH%">%SITE_URL%/cuestionario-cesqt/?org_id=%HASH%</a>
 		
 		<?php			
             if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('INFORMACION');
