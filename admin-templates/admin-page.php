@@ -250,7 +250,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         'ARRAY_A'
     );
 
-    return $suma / $cantidad;
+    return (int)$suma / (int)$cantidad;
 }
 
 
