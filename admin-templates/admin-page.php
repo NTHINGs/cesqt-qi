@@ -145,7 +145,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
                     datasets: [{
-                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
+                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 3, 1), get_resultados_pregunta_exactos($org_id, 3, 2)));?>'),
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
