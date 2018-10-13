@@ -275,8 +275,8 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             'rgba(255, 206, 86, 0.2)',
                             'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(204, 255, 232, 0.2)',
-                            'rgba(184, 237, 255, 0.2)',
+                            'rgba(102, 154, 255, 0.2)',
+                            'rgba(154, 255, 102, 0.2)',
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -284,8 +284,8 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             'rgba(255, 206, 86, 0.2)',
                             'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(204, 255, 232, 0.2)',
-                            'rgba(184, 237, 255, 0.2)',
+                            'rgba(102, 154, 255, 0.2)',
+                            'rgba(154, 255, 102, 0.2)',
                         ],
                         borderWidth: 1
                     }]
