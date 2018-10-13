@@ -243,7 +243,7 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
         "SELECT COUNT(*) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
-        AND R.organizacion = $org_id 
+        AND R.organizacion = '$org_id'
         AND RS.pregunta = $pregunta
         AND RS.respuesta = $respuesta"
     );
@@ -266,7 +266,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         "SELECT COUNT(*) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
-        AND R.organizacion = $org_id 
+        AND R.organizacion = '$org_id'
         AND RS.pregunta = $pregunta"
     );
     
@@ -274,7 +274,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         "SELECT SUM(RS.respuesta) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
-        AND R.organizacion = $org_id 
+        AND R.organizacion = '$org_id'
         AND RS.pregunta = $pregunta"
     );
     
