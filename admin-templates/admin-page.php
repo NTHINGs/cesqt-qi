@@ -222,6 +222,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
 }
 
 function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
+    global $wpdb;
     $table_resultados = $wpdb->prefix . "cesqt_resultados RS";
     $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
     $table_registros = $wpdb->prefix . "cesqt_registros R";
@@ -237,6 +238,7 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
 }
 
 function get_promedio_pregunta($org_id, $pregunta) {
+    global $wpdb;
     $table_resultados = $wpdb->prefix . "cesqt_resultados RS";
     $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
     $table_registros = $wpdb->prefix . "cesqt_registros R";
