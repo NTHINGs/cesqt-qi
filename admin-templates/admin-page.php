@@ -81,8 +81,9 @@ function construir_datos_grafica_especial($grupo, $org_id) {
         ?>
         <div id="result-container" style="width: 100%;">
             <h2>Sexo</h2>
-            <canvas id="sexo" width="400" height="400"></canvas>
-
+            <div>
+                <canvas id="sexo" width="400" height="400"></canvas>
+            </div>
             <h2>Edad</h2>
             <p><?php echo get_promedio_pregunta($org_id, 2);?></p>
 
@@ -105,7 +106,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
 
         <script>
             var ctx_sexo = document.getElementById("sexo").getContext("2d");
-            // ctx_sexo.canvas.height = 400;
+            ctx_sexo.canvas.height = 400;
             ctx_sexo.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_sexo = new Chart(ctx_sexo, {
                 type: 'pie',
