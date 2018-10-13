@@ -233,7 +233,6 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
 }
 
 function get_promedio_pregunta($org_id, $pregunta) {
-    echo 'ESTOY AQUI';
     $cantidad = $wpdb->get_var(
         "SELECT COUNT(*) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
@@ -241,7 +240,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         AND R.organizacion = $org_id 
         AND P.pregunta = $pregunta"
     );
-
+    
     $suma = $wpdb->get_var(
         "SELECT SUM(RS.respuesta) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
@@ -250,7 +249,9 @@ function get_promedio_pregunta($org_id, $pregunta) {
         AND P.pregunta = $pregunta", 
         'ARRAY_A'
     );
-
+    echo $cantidad;
+    echo $suma;
+    
     return (int)$suma / (int)$cantidad;
 }
 
