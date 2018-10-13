@@ -67,9 +67,21 @@ function cesqt_qi_admin_graficas($grupo, $org_id) {
     echo '<h1>' . $title . '</h1>';
     if ($grupo == 'INFORMACION') {
         construir_datos_grafica_especial($grupo, $org_id);
-    } else {
-        // $chart_data = construir_datos_grafica($grupo, $org_id);
+    } elseif($grupo == 'ALCOHOLISMO_Y_TABAQUISMO') {
         echo 'CONSTRUYENDO';
+    } else {
+        $chart_data = construir_datos_grafica($grupo, $org_id);
+        $variables = array(
+            '%LABELS%',
+            '%DATA%',
+            '%COLORS%',
+        );
+        $values = array(
+            $chart_data['labels'], 
+            $chart_data['data'],
+            $chart_data['colors'],
+        );
+        echo str_replace($variables, $values, file_get_contents(  CESQT_PLUGIN_PATH . "templates/cesqt_qi_admin_graficas.html" ));
     }
 }
 
@@ -348,18 +360,88 @@ function get_promedio_pregunta($org_id, $pregunta) {
 }
 
 
-// function construir_datos_grafica($grupo) {
-    
-// }
+function construir_datos_grafica($grupo, $org_id) {
+    global $wpdb;
+    $table_grupos = $wpdb->prefix . "cesqt_grupos G";
+    $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
+    $table_registros = $wpdb->prefix . "cesqt_registros R";
+    $table_resultados = $wpdb->prefix . "cesqt_resultados RS";
 
-// function construir_grafica($labels, $data) {
-//     $variables = array(
-//         '%LABELS%',
-//         '%DATA%',
-//     );
-//     $values = array(
-//         $labels, 
-//         $data,
-//     );
-//     echo str_replace($variables, $values, file_get_contents(  CESQT_PLUGIN_PATH . "templates/cesqt_qi_admin_graficas.html" ));
-// }
+    $cantidad_preguntas = (int)$wpdb->get_var(
+        "SELECT COUNT(*) FROM $table_preguntas, $table_grupos
+        WHERE P.grupo = G.id
+        AND G.nombre = '$grupo'"
+    );
+
+    $registros = $wpdb->get_results(
+        "SELECT id FROM $table_registros WHERE organizacion = '$org_id'",
+        'ARRAY_A'
+    );
+
+    $chart_data = array();
+    switch($grupo) {
+        case 'ILUSION_POR_EL_TRABAJO':
+        case 'INDOLENCIA':
+        case 'DESGASTE_PSIQUICO':
+        case 'CULPA':
+            $chart_data['labels'] = array('Nivel Alto', 'Nivel Bajo');
+            $chart_data['data'] = array(0, 0);
+            $chart_data['colors'] = array('rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)');
+            foreach( $registros as $index => $row ){
+                $sumatoria_respuestas_grupo_persona = (int)$wpdb->get_var(
+                    "SELECT SUM(RS.respuesta) FROM 
+                        $table_resultados, 
+                        $table_preguntas, 
+                        $table_registros, 
+                        $table_grupos
+                    WHERE RS.pregunta = P.id 
+                    AND RS.registro = R.id 
+                    AND P.grupo = G.id
+                    AND G.nombre = '$grupo'
+                    AND RS.registro = {$row['id']}"
+                );
+        
+                $media = $sumatoria_respuestas_grupo_persona / $cantidad_preguntas;
+        
+                if ($media >= 2) {
+                    $chart_data['data'][0]++;
+                } else {
+                    $chart_data['data'][1]++;
+                }
+            }
+            break;
+        default:
+            // Niveles entre 0 y 1.5 son bajos, entre 1.6 y 2 son moderados y arriba de 2 alto
+            $chart_data['labels'] = array('Nivel Alto', 'Nivel Moderado', 'Nivel Bajo');
+            $chart_data['data'] = array(0, 0, 0);
+            $chart_data['colors'] = array('rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)');
+            foreach( $registros as $index => $row ){
+                $sumatoria_respuestas_grupo_persona = (int)$wpdb->get_var(
+                    "SELECT SUM(RS.respuesta) FROM 
+                        $table_resultados, 
+                        $table_preguntas, 
+                        $table_registros, 
+                        $table_grupos
+                    WHERE RS.pregunta = P.id 
+                    AND RS.registro = R.id 
+                    AND P.grupo = G.id
+                    AND G.nombre = '$grupo'
+                    AND RS.registro = {$row['id']}"
+                );
+        
+                $media = $sumatoria_respuestas_grupo_persona / $cantidad_preguntas;
+        
+                if ($media >= 2) {
+                    $chart_data['data'][0]++;
+                } elseif ($media >= 1.6 && $media < 2) {
+                    $chart_data['data'][1]++;
+                } else {
+                    $chart_data['data'][2]++;
+                }
+            }
+            
+            break;
+    }
+    
+    return $chart_data;
+}
