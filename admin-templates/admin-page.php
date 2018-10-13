@@ -125,12 +125,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                     datasets: [{
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 1, 1), get_resultados_pregunta_exactos($org_id, 1, 2)));?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderWidth: 1
                     }]
@@ -147,12 +147,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                     datasets: [{
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderWidth: 1
                     }]
@@ -185,12 +185,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderWidth: 1
                     }]
@@ -220,12 +220,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderWidth: 1
                     }]
@@ -262,12 +262,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 0.2)',
-                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(0, 0, 255, 1)',
+                            'rgba(255, 0, 0, 1)',
                         ],
                         borderWidth: 1
                     }]
