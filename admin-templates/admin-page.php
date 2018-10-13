@@ -125,12 +125,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                     datasets: [{
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 1, 1), get_resultados_pregunta_exactos($org_id, 1, 2)));?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
                         ],
                         borderWidth: 1
                     }]
@@ -147,12 +147,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                     datasets: [{
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
                         ],
                         borderWidth: 1
                     }]
@@ -185,12 +185,18 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
                         ],
                         borderWidth: 1
                     }]
@@ -220,12 +226,14 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
                         ],
                         borderWidth: 1
                     }]
@@ -262,12 +270,22 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             );
                             ?>'),
                         backgroundColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(204, 255, 232, 0.2)',
+                            'rgba(184, 237, 255, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(0, 0, 255, 1)',
-                            'rgba(255, 0, 0, 1)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(204, 255, 232, 0.2)',
+                            'rgba(184, 237, 255, 0.2)',
                         ],
                         borderWidth: 1
                     }]
