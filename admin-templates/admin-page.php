@@ -262,7 +262,11 @@ function get_promedio_pregunta($org_id, $pregunta) {
     echo 'cantidad: ' . $cantidad;
     echo 'suma' . $suma;
     
-    return (int)$suma / (int)$cantidad;
+    if ($cantidad > 0) {
+        return (int)$suma / (int)$cantidad;
+    } else {
+        return 0;
+    }
 }
 
 
