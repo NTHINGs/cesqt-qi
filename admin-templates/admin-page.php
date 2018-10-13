@@ -227,7 +227,7 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
     $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
     $table_registros = $wpdb->prefix . "cesqt_registros R";
 
-    return $wpdb->get_var(
+    $cantidad = $wpdb->get_var(
         "SELECT COUNT(*) FROM $table_resultados, $table_preguntas, $table_registros
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
@@ -235,6 +235,11 @@ function get_resultados_pregunta_exactos($org_id, $pregunta, $respuesta) {
         AND P.pregunta = $pregunta
         AND RS.respuesta = $respuesta"
     );
+    if ($cantidad > 0) {
+        return (int)$cantidad;
+    } else {
+        return 0;
+    }
 }
 
 function get_promedio_pregunta($org_id, $pregunta) {
