@@ -81,27 +81,35 @@ function construir_datos_grafica_especial($grupo, $org_id) {
         ?>
         <div id="result-container" style="width: 100%;">
             <h2>Sexo</h2>
-            <!-- <div> -->
+            <div>
                 <canvas id="sexo" width="400" height="400"></canvas>
-            <!-- </div> -->
+            </div>
             <h2>Edad</h2>
             <p><?php echo get_promedio_pregunta($org_id, 2);?></p>
 
             <h2>Estado Civil</h2>
-            <canvas id="estado_civil" width="400" height="400"></canvas>
+            <div>
+                <canvas id="estado_civil" width="400" height="400"></canvas>
+            </div>
 
             <h2>Hijos</h2>
             <p>Número de hijos promedio: <?php echo get_promedio_pregunta($org_id, 4);?></p>
             <p>Número de hijos viviendo en casa promedio: <?php echo get_promedio_pregunta($org_id, 5);?></p>
 
             <h2>Tipo De Contrato</h2>
-            <canvas id="tipo_contrato" width="400" height="400"></canvas>
+            <div>
+                <canvas id="tipo_contrato" width="400" height="400"></canvas>
+            </div>
 
             <h2>Años De Experiencia</h2>
-            <canvas id="años_de_experiencia" width="400" height="400"></canvas>
+            <div>
+                <canvas id="años_de_experiencia" width="400" height="400"></canvas>
+            </div>
 
             <h2>Último Grado de Estudio</h2>
-            <canvas id="grados_estudio" width="400" height="400"></canvas>
+            <div>
+                <canvas id="grados_estudio" width="400" height="400"></canvas>
+            </div>
         </div>
 
         <script>
@@ -118,18 +126,18 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 }
             });
 
-            // var ctx_estado_civil = document.getElementById("estado_civil").getContext("2d");
-            // // ctx_estado_civil.canvas.height = 400;
-            // ctx_estado_civil.canvas.width = document.getElementById('result-container').innerWidth;
-            // var grafica_estado_civil = new Chart(ctx_estado_civil, {
-            //     type: 'pie',
-            //     data: {
-            //         labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
-            //         datasets: [{
-            //             data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
-            //         }]
-            //     }
-            // });
+            var ctx_estado_civil = document.getElementById("estado_civil").getContext("2d");
+            ctx_estado_civil.canvas.height = 400;
+            ctx_estado_civil.canvas.width = document.getElementById('result-container').innerWidth;
+            var grafica_estado_civil = new Chart(ctx_estado_civil, {
+                type: 'pie',
+                data: {
+                    labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
+                    datasets: [{
+                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
+                    }]
+                }
+            });
 
             // var ctx_tipo_contrato = document.getElementById("tipo_contrato").getContext("2d");
             // // ctx_tipo_contrato.canvas.height = 400;
