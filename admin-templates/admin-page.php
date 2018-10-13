@@ -258,6 +258,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         AND R.organizacion = $org_id 
         AND P.pregunta = $pregunta"
     );
+    echo $org_id;
     echo 'cantidad: ' . $cantidad;
     echo 'suma' . $suma;
     
