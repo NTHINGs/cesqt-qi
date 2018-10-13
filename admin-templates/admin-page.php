@@ -256,8 +256,7 @@ function get_promedio_pregunta($org_id, $pregunta) {
         WHERE RS.pregunta = P.id 
         AND RS.registro = R.id 
         AND R.organizacion = $org_id 
-        AND P.pregunta = $pregunta", 
-        'ARRAY_A'
+        AND P.pregunta = $pregunta"
     );
     echo 'cantidad: ' . $cantidad;
     echo 'suma' . $suma;
