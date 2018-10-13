@@ -335,7 +335,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Fumadores', 'Bebedores'],
                     datasets: [{
-                        label: 'Personas'
+                        label: 'Personas',
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 120, 1), get_resultados_pregunta_exactos($org_id, 124, 1)));?>'),
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
@@ -358,7 +358,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Cigarros', 'Puros', 'Pipas'],
                     datasets: [{
-                        label: 'Al Día'
+                        label: 'Al Día',
                         data: JSON.parse('<?php echo json_encode(array(
                                 get_promedio_pregunta($org_id, 121),
                                 get_promedio_pregunta($org_id, 122),
@@ -387,7 +387,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Consume Menos De Lo Habitual', 'Consume Igual Que Siempre', 'Consume Más De Lo Habitual'],
                     datasets: [{
-                        label: 'Personas'
+                        label: 'Personas',
                         data: JSON.parse('<?php echo json_encode(array(
                                 get_resultados_pregunta_exactos($org_id, 127, 0),
                                 get_resultados_pregunta_exactos($org_id, 127, 1),
