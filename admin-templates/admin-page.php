@@ -81,9 +81,9 @@ function construir_datos_grafica_especial($grupo, $org_id) {
         ?>
         <div id="result-container" style="width: 100%;">
             <h2>Sexo</h2>
-            <div>
+            <!-- <div> -->
                 <canvas id="sexo" width="400" height="400"></canvas>
-            </div>
+            <!-- </div> -->
             <h2>Edad</h2>
             <p><?php echo get_promedio_pregunta($org_id, 2);?></p>
 
