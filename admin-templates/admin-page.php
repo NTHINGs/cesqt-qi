@@ -105,7 +105,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
 
         <script>
             var ctx_sexo = document.getElementById("sexo").getContext("2d");
-            ctx_sexo.canvas.height = 400;
+            // ctx_sexo.canvas.height = 400;
             ctx_sexo.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_sexo = new Chart(ctx_sexo, {
                 type: 'pie',
@@ -118,7 +118,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
             });
 
             var ctx_estado_civil = document.getElementById("estado_civil").getContext("2d");
-            ctx_estado_civil.canvas.height = 400;
+            // ctx_estado_civil.canvas.height = 400;
             ctx_estado_civil.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_estado_civil = new Chart(ctx_estado_civil, {
                 type: 'pie',
@@ -131,7 +131,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
             });
 
             var ctx_tipo_contrato = document.getElementById("tipo_contrato").getContext("2d");
-            ctx_tipo_contrato.canvas.height = 400;
+            // ctx_tipo_contrato.canvas.height = 400;
             ctx_tipo_contrato.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_tipo_contrato = new Chart(ctx_tipo_contrato, {
                 type: 'pie',
@@ -160,7 +160,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
             });
 
             var ctx_años_de_experiencia = document.getElementById("años_de_experiencia").getContext("2d");
-            ctx_años_de_experiencia.canvas.height = 400;
+            // ctx_años_de_experiencia.canvas.height = 400;
             ctx_años_de_experiencia.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_años_de_experiencia = new Chart(ctx_años_de_experiencia, {
                 type: 'bar',
@@ -185,7 +185,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
             });
 
             var ctx_grados_estudio = document.getElementById("grados_estudio").getContext("2d");
-            ctx_grados_estudio.canvas.height = 400;
+            // ctx_grados_estudio.canvas.height = 400;
             ctx_grados_estudio.canvas.width = document.getElementById('result-container').innerWidth;
             var grafica_grados_estudio = new Chart(ctx_grados_estudio, {
                 type: 'pie',
