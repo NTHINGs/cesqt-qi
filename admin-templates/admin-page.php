@@ -87,10 +87,10 @@ function cesqt_qi_admin_graficas($grupo, $org_id) {
 
 function construir_datos_grafica_especial($grupo, $org_id) {
     global $wpdb;
+    $table_resultados = $wpdb->prefix . "cesqt_resultados RS";
+    $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
+    $table_registros = $wpdb->prefix . "cesqt_registros R";
     if ($grupo == 'INFORMACION') {
-        $table_resultados = $wpdb->prefix . "cesqt_resultados RS";
-        $table_preguntas = $wpdb->prefix . "cesqt_preguntas P";
-        $table_registros = $wpdb->prefix . "cesqt_registros R";
 
         ?>
         <div id="result-container" style="width: 100%;">
@@ -298,6 +298,112 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                             'rgba(153, 102, 255, 0.2)',
                             'rgba(102, 154, 255, 0.2)',
                             'rgba(154, 255, 102, 0.2)',
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+        </script>
+        <?php
+    } elseif ($grupo == 'ALCOHOLISMO_Y_TABAQUISMO') {
+        ?>
+        <div id="result-container" style="width: 100%;">
+            <h2>Fumadores Y Bebedores</h2>
+            <div>
+                <canvas id="fumadores_bebedores" width="400" height="400"></canvas>
+            </div>
+            <h2>Fuman Al Día</h2>
+            <div>
+                <canvas id="cantidad_fumar" width="400" height="400"></canvas>
+            </div>
+            <h2>Beben Al Día</h2>
+            <p><?php echo get_promedio_pregunta($org_id, 125);?> Unidades</p>
+            
+            <h2>¿Han Sentido Necesidad De Reducir Su Consumo De Alcohol?</h2>
+            <p><?php echo get_promedio_pregunta($org_id, 126);?> Personas</p>
+
+            <h2>Personas Que Durante Los Últimos 3 Meses Han Constatado Algún Cambio En Sus Hábitos De Consumo De Alcohol</h2>
+            <div>
+                <canvas id="personas_cambio_habitos" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <script>
+            var ctx_fumadores_bebedores = document.getElementById("fumadores_bebedores").getContext("2d");
+            ctx_fumadores_bebedores.canvas.height = 400;
+            ctx_fumadores_bebedores.canvas.width = document.getElementById('result-container').innerWidth;
+            var grafica_fumadores_bebedores = new Chart(ctx_fumadores_bebedores, {
+                type: 'bar',
+                data: {
+                    labels:  ['Fumadores', 'Bebedores'],
+                    datasets: [{
+                        label: 'Personas'
+                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 120, 1), get_resultados_pregunta_exactos($org_id, 124, 1)));?>'),
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+            var ctx_cantidad_fumar = document.getElementById("cantidad_fumar").getContext("2d");
+            ctx_cantidad_fumar.canvas.height = 400;
+            ctx_cantidad_fumar.canvas.width = document.getElementById('result-container').innerWidth;
+            var grafica_cantidad_fumar = new Chart(ctx_cantidad_fumar, {
+                type: 'bar',
+                data: {
+                    labels:  ['Cigarros', 'Puros', 'Pipas'],
+                    datasets: [{
+                        label: 'Al Día'
+                        data: JSON.parse('<?php echo json_encode(array(
+                                get_promedio_pregunta($org_id, 121),
+                                get_promedio_pregunta($org_id, 122),
+                                get_promedio_pregunta($org_id, 123),
+                            ));?>'),
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+            var ctx_personas_cambio_habitos = document.getElementById("personas_cambio_habitos").getContext("2d");
+            ctx_personas_cambio_habitos.canvas.height = 400;
+            ctx_personas_cambio_habitos.canvas.width = document.getElementById('result-container').innerWidth;
+            var grafica_personas_cambio_habitos = new Chart(ctx_personas_cambio_habitos, {
+                type: 'bar',
+                data: {
+                    labels:  ['Consume Menos De Lo Habitual', 'Consume Igual Que Siempre', 'Consume Más De Lo Habitual'],
+                    datasets: [{
+                        label: 'Personas'
+                        data: JSON.parse('<?php echo json_encode(array(
+                                get_resultados_pregunta_exactos($org_id, 127, 0),
+                                get_resultados_pregunta_exactos($org_id, 127, 1),
+                                get_resultados_pregunta_exactos($org_id, 127, 2),
+                            ));?>'),
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
                         ],
                         borderWidth: 1
                     }]
