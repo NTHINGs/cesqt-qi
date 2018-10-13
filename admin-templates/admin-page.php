@@ -125,12 +125,12 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                     datasets: [{
                         data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 1, 1), get_resultados_pregunta_exactos($org_id, 1, 2)));?>'),
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                         ],
                         borderWidth: 1
                     }]
