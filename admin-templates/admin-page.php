@@ -112,7 +112,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Masculino', 'Femenino'],
                     datasets: [{
-                        data: JSON.parse(<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 1, 1), get_resultados_pregunta_exactos($org_id, 1, 2)));?>),
+                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 1, 1), get_resultados_pregunta_exactos($org_id, 1, 2)));?>'),
                     }]
                 }
             });
@@ -125,7 +125,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                 data: {
                     labels:  ['Con Pareja Estable', 'Sin Pareja Estable'],
                     datasets: [{
-                        data: JSON.parse(<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>),
+                        data: JSON.parse('<?php echo json_encode(array(get_resultados_pregunta_exactos($org_id, 2, 1), get_resultados_pregunta_exactos($org_id, 2, 2)));?>'),
                     }]
                 }
             });
@@ -144,7 +144,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                         'Contrato De Capacitación Inicial',
                     ],
                     datasets: [{
-                        data: JSON.parse(<?php 
+                        data: JSON.parse('<?php 
                             echo json_encode(
                                 array(
                                     get_resultados_pregunta_exactos($org_id, 6, 1), 
@@ -154,7 +154,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                                     get_resultados_pregunta_exactos($org_id, 6, 5),
                                 )
                             );
-                            ?>),
+                            ?>'),
                     }]
                 }
             });
@@ -171,7 +171,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                         'Años Promedio En El Puesto De Trabajo', 
                     ],
                     datasets: [{
-                        data: JSON.parse(<?php 
+                        data: JSON.parse('<?php 
                             echo json_encode(
                                 array(
                                     get_promedio_pregunta($org_id, 7),
@@ -179,7 +179,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                                     get_promedio_pregunta($org_id, 9),
                                 )
                             );
-                            ?>),
+                            ?>'),
                     }]
                 }
             });
@@ -200,7 +200,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                         'Doctorado', 
                     ],
                     datasets: [{
-                        data: JSON.parse(<?php 
+                        data: JSON.parse('<?php 
                             echo json_encode(
                                 array(
                                     get_resultados_pregunta_exactos($org_id, 10, 1), 
@@ -212,7 +212,7 @@ function construir_datos_grafica_especial($grupo, $org_id) {
                                     get_resultados_pregunta_exactos($org_id, 10, 7),
                                 )
                             );
-                            ?>),
+                            ?>'),
                     }]
                 }
             });
