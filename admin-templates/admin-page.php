@@ -416,7 +416,7 @@ function construir_datos_grafica($grupo, $org_id) {
             $chart_data['data'] = array(0, 0, 0);
             $chart_data['colors'] = array('rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)');
             foreach( $registros as $index => $row ){
-                $sumatoria_respuestas_grupo_persona = (int)$wpdb->get_var(
+                $sumatoria_respuestas_grupo_persona_normales = (int)$wpdb->get_var(
                     "SELECT SUM(RS.respuesta) FROM 
                         $table_resultados, 
                         $table_preguntas, 

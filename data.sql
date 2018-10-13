@@ -29,225 +29,225 @@ INSERT INTO wp_cesqt_grupos(`nombre`, `nombrelimpio`, `descripcion`) VALUES ('AB
 
 -- ------------PREGUNTAS------------
 -- INFORMACION
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Sexo', 1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Edad',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Estado civil',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Número de hijos',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Cuántos hijos viven con usted?',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tipo de contrato',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Años que lleva en esta profesión',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Años que lleva en esta organización',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Años que lleva en este puesto de trabajo',1, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ultimo grado de estudio',1, 0);
--- INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿En qué puesto trabaja actualmente?',1, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Sexo', 1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Edad',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Estado civil',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Número de hijos',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Cuántos hijos viven con usted?',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tipo de contrato',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Años que lleva en esta profesión',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Años que lleva en esta organización',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Años que lleva en este puesto de trabajo',1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ultimo grado de estudio',1);
+-- INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿En qué puesto trabaja actualmente?',1);
 -- SINDROME_QUEMARSE
 -- ILUSION_POR_EL_TRABAJO
 -- INDOLENCIA
 -- DESGASTE_PSIQUICO
 -- CULPA
 -- 11-30
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi trabajo no supone un reto estimulante.', 2, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('No me apetece atender a algunos clientes.', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que muchos clientes son insoportables', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me preocupa el trato que he dado a algunas personas en el trabajo.', 5, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Veo mi trabajo como una fuente de realización personal.', 2, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que los familiares de los clientes son unos pesados.', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que trato con indiferencia a algunos clientes.', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que estoy saturado/a por el trabajo.', 4, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento culpable por alguna de mis actitudes en el trabajo.', 5, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que mi trabajo me aporta cosas positivas.', 2, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me apetece ser irónico/a con algunos clientes.', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento agobiado/a por el trabajo.', 4, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo remordimientos por algunos de mis comportamientos en el trabajo.', 5, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Etiqueto o clasifico a los clientes según su comportamiento.', 3, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi trabajo me resulta gratificante.', 2, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que debería pedir disculpas a alguien por mi comportamiento.', 5, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento cansado/a físicamente en el trabajo.', 4, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento desgastado/a emocionalmente.', 4, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento ilusionado/a por mi trabajo.', 2, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento mal por algunas cosas que he dicho en el trabajo.', 5, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi trabajo no supone un reto estimulante.', 2);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('No me apetece atender a algunos clientes.', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que muchos clientes son insoportables', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me preocupa el trato que he dado a algunas personas en el trabajo.', 5);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Veo mi trabajo como una fuente de realización personal.', 2);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que los familiares de los clientes son unos pesados.', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que trato con indiferencia a algunos clientes.', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que estoy saturado/a por el trabajo.', 4);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento culpable por alguna de mis actitudes en el trabajo.', 5);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que mi trabajo me aporta cosas positivas.', 2);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me apetece ser irónico/a con algunos clientes.', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento agobiado/a por el trabajo.', 4);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo remordimientos por algunos de mis comportamientos en el trabajo.', 5);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Etiqueto o clasifico a los clientes según su comportamiento.', 3);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi trabajo me resulta gratificante.', 2);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que debería pedir disculpas a alguien por mi comportamiento.', 5);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento cansado/a físicamente en el trabajo.', 4);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento desgastado/a emocionalmente.', 4);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento ilusionado/a por mi trabajo.', 2);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento mal por algunas cosas que he dicho en el trabajo.', 5);
 -- DESENCANTO_PROFESIONAL
 -- 31 - 38
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('No me apetece hacer ciertas cosas de mi trabajo.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Estoy harto/a de mi trabajo', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento decepcionado/a por lo que es mi trabajo.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que merezco algo mejor que este trabajo.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Hay momentos en los que me gustaría desaparecer de mi trabajo.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que estoy estancado/a y no progreso en mi trabajo.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que algunas cosas que hago en mi trabajo no sirven para nada.', 6, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pienso que mi empresa me está utilizando.', 6, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('No me apetece hacer ciertas cosas de mi trabajo.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Estoy harto/a de mi trabajo', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento decepcionado/a por lo que es mi trabajo.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que merezco algo mejor que este trabajo.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Hay momentos en los que me gustaría desaparecer de mi trabajo.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que estoy estancado/a y no progreso en mi trabajo.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que algunas cosas que hago en mi trabajo no sirven para nada.', 6);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pienso que mi empresa me está utilizando.', 6);
 -- AUTONOMIA
 -- 39 - 43
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('En este trabajo poseo independencia para decidir cómo hacerlo.', 7, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('El trabajo me proporciona posibilidades de utilizar mi iniciativa.', 7, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Para hacer mi trabajo dependo de lo que me dice o me manda mi supervisor/a.', 7, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Considero que mi trabajo me proporciona suficiente autonomía.', 7, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Puedo determinar mi ritmo de trabajo.', 7, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('En este trabajo poseo independencia para decidir cómo hacerlo.', 7);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('El trabajo me proporciona posibilidades de utilizar mi iniciativa.', 7);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Para hacer mi trabajo dependo de lo que me dice o me manda mi supervisor/a.', 7);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Considero que mi trabajo me proporciona suficiente autonomía.', 7);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Puedo determinar mi ritmo de trabajo.', 7);
 -- CONFLICTO_DE_ROL
 -- 44 - 48
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo que hacer cosas de forma diferente a como pienso que deben hacerse.', 8, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Se me pide que realice funciones y tareas para las que no estoy autorizado/a.', 8, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo que trabajar con dos o más grupos que hacen las cosas de manera bastante diferente.', 8, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Recibo demandas incompatibles de dos o más personas.', 8, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Se me asignan tareas/funciones sin los recursos y medios materiales necesarios para realizarlas.', 8, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo que hacer cosas de forma diferente a como pienso que deben hacerse.', 8);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Se me pide que realice funciones y tareas para las que no estoy autorizado/a.', 8);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo que trabajar con dos o más grupos que hacen las cosas de manera bastante diferente.', 8);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Recibo demandas incompatibles de dos o más personas.', 8);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Se me asignan tareas/funciones sin los recursos y medios materiales necesarios para realizarlas.', 8);
 -- AMBIGUEDAD_DE_ROL
 -- 49 - 53
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Conozco el grado de autoridad que tengo en mi trabajo.', 9, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Los objetivos y metas de mi trabajo son claros y están planificados.', 9, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Conozco cuáles son mis responsabilidades en el trabajo.', 9, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Conozco los criterios con los que me evalúan.', 9, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Sé exactamente lo que se espera de mí en el trabajo.', 9, 1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Conozco el grado de autoridad que tengo en mi trabajo.', 9);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Los objetivos y metas de mi trabajo son claros y están planificados.', 9);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Conozco cuáles son mis responsabilidades en el trabajo.', 9);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Conozco los criterios con los que me evalúan.', 9);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Sé exactamente lo que se espera de mí en el trabajo.', 9);
 -- SOBRECARGA_LABORAL
 -- 54 - 59
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Cuando está trabajando, ¿se encuentra con situaciones especialmente duras?', 10, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido que hacer más de una cosa a la vez?', 10, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido problemas con su trabajo debido a que se ha ido complicando progresivamente?', 10, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Le es posible trabajar con un ritmo relajado?', 10, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Le ocurre que no tiene tiempo suficiente para completar su trabajo?', 10, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Piensa que tiene que hacer un trabajo demasiado difícil para usted?', 10, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Cuando está trabajando, ¿se encuentra con situaciones especialmente duras?', 10);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido que hacer más de una cosa a la vez?', 10);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido problemas con su trabajo debido a que se ha ido complicando progresivamente?', 10);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Le es posible trabajar con un ritmo relajado?', 10);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Le ocurre que no tiene tiempo suficiente para completar su trabajo?', 10);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Piensa que tiene que hacer un trabajo demasiado difícil para usted?', 10);
 -- APOYO_SOCIAL
 -- 60 - 67
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Se siente apreciado en el trabajo por su supervisor/a directo?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Se siente apreciado/a en el trabajo por sus compañeros?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Se siente apreciado/a en el trabajo por la dirección del centro?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia le ayuda su supervisor/a cuando surgen problemas en el trabajo?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia le ayudan sus compañeros/as cuando surgen problemas en el trabajo?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia le ayuda la dirección del centro cuando surgen problemas en el trabajo?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Se siente respaldado/a por su familia cuando surgen problemas en el trabajo?', 11, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Se siente respaldado/a por los “usuarios” del centro cuando surgen problemas?', 11, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Se siente apreciado en el trabajo por su supervisor/a directo?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Se siente apreciado/a en el trabajo por sus compañeros?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Se siente apreciado/a en el trabajo por la dirección del centro?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia le ayuda su supervisor/a cuando surgen problemas en el trabajo?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia le ayudan sus compañeros/as cuando surgen problemas en el trabajo?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia le ayuda la dirección del centro cuando surgen problemas en el trabajo?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Se siente respaldado/a por su familia cuando surgen problemas en el trabajo?', 11);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Se siente respaldado/a por los “usuarios” del centro cuando surgen problemas?', 11);
 -- CONFLICTOS_INTERPERSONALES
 -- 68 - 73
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con su supervisor/a?', 12, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con sus compañeros/as?', 12, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con los clientes?', 12, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con los familiares de los clientes?', 12, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con la dirección del centro o de la organización?', 12, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué frecuencia tiene conflictos con otros trabajadores del centro?', 12, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con su supervisor/a?', 12);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con sus compañeros/as?', 12);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con los clientes?', 12);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con los familiares de los clientes?', 12);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con la dirección del centro o de la organización?', 12);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué frecuencia tiene conflictos con otros trabajadores del centro?', 12);
 -- INEQUIDAD
 -- 74 - 78
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Pongo más en mi trabajo de lo que obtengo a cambio de él.', 13, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Recibo bastantes recompensas por los cuidados y atenciones que doy a los clientes.', 13, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me dejo la piel en el trabajo comparado con lo que recibo a cambio.', 13, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('No veo que se me recompense mucho a cambio de los esfuerzos que pongo en mi trabajo.', 13, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Presto mucha atención a los clientes pero obtengo poco agradecimiento a cambio.', 13, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Pongo más en mi trabajo de lo que obtengo a cambio de él.', 13);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Recibo bastantes recompensas por los cuidados y atenciones que doy a los clientes.', 13);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me dejo la piel en el trabajo comparado con lo que recibo a cambio.', 13);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('No veo que se me recompense mucho a cambio de los esfuerzos que pongo en mi trabajo.', 13);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Presto mucha atención a los clientes pero obtengo poco agradecimiento a cambio.', 13);
 -- FEEDBACK
 -- 79 - 86
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La organización me facilita datos favorables sobre la realización de mi trabajo.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi supervisor/a me felicita cuando hago bien mi trabajo.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi supervisor/a me hace saber cuando no está contento/a con mi trabajo.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La organización me informa cuando mi rendimiento es deficiente.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mis compañeros/as me dicen cuando estoy haciendo un buen trabajo.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mis compañeros/as me hacen comentarios cuando mi rendimiento es deficiente.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La organización me expresa satisfacción por mi rendimiento en el trabajo.', 14, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi supervisor me dice cuando hago algo equivocado.', 14, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La organización me facilita datos favorables sobre la realización de mi trabajo.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi supervisor/a me felicita cuando hago bien mi trabajo.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi supervisor/a me hace saber cuando no está contento/a con mi trabajo.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La organización me informa cuando mi rendimiento es deficiente.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mis compañeros/as me dicen cuando estoy haciendo un buen trabajo.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mis compañeros/as me hacen comentarios cuando mi rendimiento es deficiente.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La organización me expresa satisfacción por mi rendimiento en el trabajo.', 14);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi supervisor me dice cuando hago algo equivocado.', 14);
 -- PROXIMA_PROMOCION
 -- 87
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Cuándo espera que se produzca su próxima promoción?', 15, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Cuándo espera que se produzca su próxima promoción?', 15);
 -- DEPRESION
 -- 88 - 107
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento triste y deprimido/a.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Por las mañanas me siento mejor que por las tardes.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Frecuentemente tengo ganas de llorar y a veces lloro.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me cuesta mucho dormir o duermo mal por las noches.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ahora tengo tanto apetito como antes.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Todavía me siento atraído/a por el sexo hacia otras personas.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que estoy adelgazando.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Estoy estreñido/a.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo palpitaciones.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me canso por cualquier cosa.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Mi cabeza está tan despejada como antes.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Hago las cosas con la misma facilidad que antes.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento agitado/a e intranquilo/a y no puedo estar quieto/a.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo esperanza y confianza en el futuro.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me siento más irritable que habitualmente.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Encuentro fácil tomar decisiones.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me creo útil y necesario/a para la gente.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Encuentro agradable vivir, mi vida es plena.', 16, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Creo que sería mejor para los demás si me muriera.', 16, 1);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me gustan las mismas cosas que habitualmente me agradaban.', 16, 1);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento triste y deprimido/a.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Por las mañanas me siento mejor que por las tardes.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Frecuentemente tengo ganas de llorar y a veces lloro.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me cuesta mucho dormir o duermo mal por las noches.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ahora tengo tanto apetito como antes.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Todavía me siento atraído/a por el sexo hacia otras personas.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que estoy adelgazando.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Estoy estreñido/a.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo palpitaciones.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me canso por cualquier cosa.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Mi cabeza está tan despejada como antes.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Hago las cosas con la misma facilidad que antes.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento agitado/a e intranquilo/a y no puedo estar quieto/a.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo esperanza y confianza en el futuro.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me siento más irritable que habitualmente.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Encuentro fácil tomar decisiones.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me creo útil y necesario/a para la gente.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Encuentro agradable vivir, mi vida es plena.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Creo que sería mejor para los demás si me muriera.', 16);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me gustan las mismas cosas que habitualmente me agradaban.', 16);
 -- PROBLEMAS_DE_SALUD
 -- 108 - 119
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Le ha preocupado que, sin estar haciendo ningún esfuerzo, se le cortara la respiración?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha sentido bruscamente palpitaciones o pinchazos en el pecho?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido dolores o molestias en el estómago?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido alguna crisis de ansiedad?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido ausencias, mareos o vértigos?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido jaquecas o dolores de cabeza?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido algún problema de salud a causa de su trabajo?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido dificultades para dormir?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido contracturas o dolores musculares?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido problemas con su pareja debido al trabajo?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido problemas con otro miembro de su familia debido al trabajo?', 17, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Ha tenido problemas con amigos o conocidos?', 17, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Le ha preocupado que, sin estar haciendo ningún esfuerzo, se le cortara la respiración?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha sentido bruscamente palpitaciones o pinchazos en el pecho?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido dolores o molestias en el estómago?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido alguna crisis de ansiedad?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido ausencias, mareos o vértigos?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido jaquecas o dolores de cabeza?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido algún problema de salud a causa de su trabajo?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido dificultades para dormir?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido contracturas o dolores musculares?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido problemas con su pareja debido al trabajo?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido problemas con otro miembro de su familia debido al trabajo?', 17);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Ha tenido problemas con amigos o conocidos?', 17);
 -- ALCOHOLISMO_Y_TABAQUISMO
 -- 120 - 127
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Fuma?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('En caso afirmativo, ¿cuántos cigarrillos al día?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Cuántos puros al día?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Cuántos pipas al día?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Bebe alcohol?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('En caso afirmativo, ¿cuántas unidades promedio al día? (Considerando 1 unidad = 1 tercio de cerveza, o un vaso de vino, o una copa de licor, o un vaso de algún combinado con alcohol)', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Has sentido alguna vez la necesidad de reducir su consumo de alcohol?', 18, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Durante los últimos 3 meses, ¿ha constatado algún cambio en sus hábitos de consumo de alcohol?', 18, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Fuma?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('En caso afirmativo, ¿cuántos cigarrillos al día?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Cuántos puros al día?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Cuántos pipas al día?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Bebe alcohol?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('En caso afirmativo, ¿cuántas unidades promedio al día? (Considerando 1 unidad = 1 tercio de cerveza, o un vaso de vino, o una copa de licor, o un vaso de algún combinado con alcohol)', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Has sentido alguna vez la necesidad de reducir su consumo de alcohol?', 18);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Durante los últimos 3 meses, ¿ha constatado algún cambio en sus hábitos de consumo de alcohol?', 18);
 -- VALORES_PERSONALES
 -- 128 - 145
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser ambicioso (tener aspiraciones y trabajar duro para conseguirlas).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser tolerante (abierto, razonable).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser competente (capaz, eficaz).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser alegre (divertido).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser limpio (aseado, pulcro).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser valiente (defender tus creencias).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser indulgente (saber perdonar a los demás).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser servicial (trabajar por el bienestar de los demás).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser honesto (sincero, honrado, no mentir).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser creativo(imaginativo, emprendedor).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser independiente (autosuficiente).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser intelectual (reflexionar, meditar).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser lógico (racional, consistente).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser cariñoso.', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser obediente (respetuoso).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser educado (cortés).', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser responsable.', 19, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Ser equilibrado (autodisciplinado, autocontrolado).', 19, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser ambicioso (tener aspiraciones y trabajar duro para conseguirlas).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser tolerante (abierto, razonable).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser competente (capaz, eficaz).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser alegre (divertido).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser limpio (aseado, pulcro).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser valiente (defender tus creencias).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser indulgente (saber perdonar a los demás).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser servicial (trabajar por el bienestar de los demás).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser honesto (sincero, honrado, no mentir).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser creativo(imaginativo, emprendedor).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser independiente (autosuficiente).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser intelectual (reflexionar, meditar).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser lógico (racional, consistente).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser cariñoso.', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser obediente (respetuoso).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser educado (cortés).', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser responsable.', 19);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Ser equilibrado (autodisciplinado, autocontrolado).', 19);
 -- SATISFACCION_LABORAL
 -- 146 - 151
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Las oportunidades que le ofrece su trabajo de hacer las cosas que le gustan.', 20, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('El salario que usted recibe.', 20, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La limpieza e higiene de su lugar de trabajo.', 20, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Las oportunidades de promoción que tiene.', 20, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La supervisión que ejercen sobre usted.', 20, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Su participación en las decisiones de su departamento o sección.', 20, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Las oportunidades que le ofrece su trabajo de hacer las cosas que le gustan.', 20);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('El salario que usted recibe.', 20);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La limpieza e higiene de su lugar de trabajo.', 20);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Las oportunidades de promoción que tiene.', 20);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La supervisión que ejercen sobre usted.', 20);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Su participación en las decisiones de su departamento o sección.', 20);
 -- RECURSOS
 -- 152 - 158
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Recursos tecnológicos.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Personal para cubrir las necesidades del servicio.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Material de uso habitual.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Áreas de descanso adecuadas.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Medidas de protección adecuadas.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Los trabajadores disponen de autoridad o influencia.', 21, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('La administración se preocupa de los problemas de su colectivo profesional.', 21, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Recursos tecnológicos.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Personal para cubrir las necesidades del servicio.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Material de uso habitual.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Áreas de descanso adecuadas.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Medidas de protección adecuadas.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Los trabajadores disponen de autoridad o influencia.', 21);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('La administración se preocupa de los problemas de su colectivo profesional.', 21);
 -- AUTOEFICACIA
 -- 159 - 166
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Puedo resolver problemas difíciles de mi trabajo si me esfuerzo lo suficiente.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Me resulta fácil persistir en lo que me he propuesto en mi trabajo hasta llegar a alcanzar mis metas.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Tengo confianza en que podría manejar eficazmente acontecimientos inesperados de mi trabajo.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Gracias a mis cualidades y recursos puedo superar situaciones imprevistas de mi trabajo.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Cuando me encuentro en dificultades puedo realizar mi trabajo tranquilo/a porque cuento con las habilidades necesarias para manejar situaciones difíciles.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Venga lo que venga, por lo general soy capaz de manejarlo.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Si me encuentro en una situación difícil en el trabajo, generalmente se me ocurre qué debo hacer.', 22, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('Al tener que hacer frente a un problema de mi trabajo, generalmente se me ocurren varias alternativas de cómo resolverlo.', 22, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Puedo resolver problemas difíciles de mi trabajo si me esfuerzo lo suficiente.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Me resulta fácil persistir en lo que me he propuesto en mi trabajo hasta llegar a alcanzar mis metas.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Tengo confianza en que podría manejar eficazmente acontecimientos inesperados de mi trabajo.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Gracias a mis cualidades y recursos puedo superar situaciones imprevistas de mi trabajo.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Cuando me encuentro en dificultades puedo realizar mi trabajo tranquilo/a porque cuento con las habilidades necesarias para manejar situaciones difíciles.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Venga lo que venga, por lo general soy capaz de manejarlo.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Si me encuentro en una situación difícil en el trabajo, generalmente se me ocurre qué debo hacer.', 22);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('Al tener que hacer frente a un problema de mi trabajo, generalmente se me ocurren varias alternativas de cómo resolverlo.', 22);
 -- ABSENTISMO 
 -- 167 - 172
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Comunicaría que se encuentra enfermo/a, cuando no se encuentra demasiado bien, para no ir al trabajo?', 23, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Comunicaría que se encuentra enfermo/a aunque se encuentre bien porque no desea ir a trabajar?', 23, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Comunicaría que se encuentra enfermo/a para no ir a trabajar por importantes razones privadas?', 23, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Comunicaría que se encuentra enfermo/a cuando se siente deprimido?', 23, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Cuántos días en los últimos 12 meses ha faltado al trabajo?', 23, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('De esos días, ¿cuántos días considera que han sido por problemas de salud o accidentes derivados del trabajo?', 23, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Comunicaría que se encuentra enfermo/a, cuando no se encuentra demasiado bien, para no ir al trabajo?', 23);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Comunicaría que se encuentra enfermo/a aunque se encuentre bien porque no desea ir a trabajar?', 23);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Comunicaría que se encuentra enfermo/a para no ir a trabajar por importantes razones privadas?', 23);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Comunicaría que se encuentra enfermo/a cuando se siente deprimido?', 23);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Cuántos días en los últimos 12 meses ha faltado al trabajo?', 23);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('De esos días, ¿cuántos días considera que han sido por problemas de salud o accidentes derivados del trabajo?', 23);
 -- ABANDONO
 -- 173 - 174
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué grado de certeza desearía dejar esta empresa en el plazo de un año y cambiar a otro puesto en el querealizara las mismas tareas y funciones?', 24, 0);
-INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`, `inversa`) VALUES ('¿Con qué grado de certeza desearía dejar su profesión en el plazo de un año?', 24, 0);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué grado de certeza desearía dejar esta empresa en el plazo de un año y cambiar a otro puesto en el querealizara las mismas tareas y funciones?', 24);
+INSERT INTO wp_cesqt_preguntas(`pregunta`, `grupo`) VALUES ('¿Con qué grado de certeza desearía dejar su profesión en el plazo de un año?', 24);
 
 
 
@@ -517,35 +517,35 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 48);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 48);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 49);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 49);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 49);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 49);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 49);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 49);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 49);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 49);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 49);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 50);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 50);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 50);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 50);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 50);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 50);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 50);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 50);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 50);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 51);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 51);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 51);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 51);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 51);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 51);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 51);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 51);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 51);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 52);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 52);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 52);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 52);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 52);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 52);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 52);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 52);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 52);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 53);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 53);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 53);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 53);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 53);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 53);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 53);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 53);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 53);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 54);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 54);
@@ -565,11 +565,11 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 56);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 56);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 57);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 57);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 57);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 57);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 57);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 57);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 57);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 57);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 57);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 58);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 58);
@@ -673,11 +673,11 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 74);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 74);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 75);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 75);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 75);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Raramente: algunas veces al año', 75);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'A veces: algunas veces al mes', 75);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente: algunas veces por semana', 75);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Muy frecuentemete: todos los días', 75);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Frecuentemente: algunas veces por semana', 75);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Muy frecuentemete: todos los días', 75);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 76);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente: algunas veces al año', 76);
@@ -771,15 +771,15 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 91);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 91);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 92);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 92);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 92);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 92);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 92);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 92);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 92);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 92);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 93);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 93);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 93);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 93);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 93);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 93);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 93);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 93);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 94);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 94);
@@ -801,55 +801,55 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 97);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 97);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 98);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 98);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 98);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 98);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 98);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 98);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 98);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 98);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 99);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 99);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 99);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 99);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 99);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 99);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 99);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 99);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 100);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 100);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 100);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 100);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 101);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 101);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 101);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 101);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 101);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 101);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 101);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 101);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 102);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 102);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 102);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 102);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 103);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 103);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 103);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 103);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 103);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 103);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 103);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 103);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 104);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 104);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 104);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 104);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 104);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 104);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 104);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 104);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 105);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 105);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 105);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 105);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 105);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 105);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 105);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 105);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 106);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 106);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 106);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 106);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 107);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Algunas veces', 107);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Frecuentemente', 107);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Siempre', 107);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Raramente', 107);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Algunas veces', 107);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, 'Frecuentemente', 107);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Siempre', 107);
 
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 0, 'Nunca', 108);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, 'Raramente', 108);
@@ -1322,16 +1322,16 @@ INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) V
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, 'Probablemente no', 172);
 INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, 'Nunca', 172);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, '1 Completamente seguro de permanecer', 173);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, '2', 173);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, '3', 173);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, '4', 173);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 5, '5', 173);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 6, '6 Completamente seguro de dejarlo', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 6, '1 Completamente seguro de permanecer', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 5, '2', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, '3', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, '4', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, '5', 173);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, '6 Completamente seguro de dejarlo', 173);
 
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, '1 Completamente seguro de permanecer', 174);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, '2', 174);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, '3', 174);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, '4', 174);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 5, '5', 174);
-INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 6, '6 Completamente seguro de dejarlo', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 6, '1 Completamente seguro de permanecer', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 5, '2', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 4, '3', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 3, '4', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 2, '5', 174);
+INSERT INTO wp_cesqt_posibles_respuestas(`tipo`, `valor`, `label`, `pregunta`) VALUES ('S', 1, '6 Completamente seguro de dejarlo', 174);

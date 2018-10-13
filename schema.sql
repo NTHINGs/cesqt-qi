@@ -38,7 +38,6 @@ CREATE TABLE %TABLE_PREFIX%preguntas
  id                 INT NOT NULL AUTO_INCREMENT ,
  pregunta           VARCHAR(500) NOT NULL ,
  grupo              INT NOT NULL,
- inversa            TINYINT NOT NULL ,
 
 PRIMARY KEY (id),
 KEY fkIdx_20 (grupo),
