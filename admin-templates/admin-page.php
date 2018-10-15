@@ -77,12 +77,15 @@ function render_cesqt_graficas($org_id=NULL) {
                 'hash' => $org_id,
             )
         )[0]->display_name;
-        echo print_r(get_users(
-            array(
-                'role' => 'empresa',
-                'hash' => $org_id,
+
+        $args = array(
+            'meta_query' => array(
+                'key'     => 'hash',
+                'value'   => $org_id,
+                'compare' => '='
             )
-        ));
+        );
+        echo print_r($args);
         ?>
         
             <div class="wrap">
