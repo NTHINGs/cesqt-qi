@@ -109,7 +109,7 @@ class Orgs_CESQT_Table extends WP_List_Table {
 			$data = $wpdb->get_results( $sql, 'ARRAY_A' );
 
 			foreach($data as $index => $row) {
-				$data[$index]['nombre'] = get_users(array('meta_key' => 'hash', 'meta_value' => $org_id))[0]->display_name;
+				$data[$index]['nombre'] = get_users(array('meta_key' => 'hash', 'meta_value' => $row['id']))[0]->display_name;
 			}
 			return $data;
 		}
