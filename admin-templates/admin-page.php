@@ -77,10 +77,16 @@ function render_cesqt_graficas($org_id=NULL) {
                 'hash' => $org_id,
             )
         )[0]->display_name;
+        echo print_r(get_users(
+            array(
+                'role' => 'empresa',
+                'hash' => $org_id,
+            )
+        ));
         ?>
         
             <div class="wrap">
-                <h2><?php echo print_r($title); ?></h2>
+                <h2><?php echo $title; ?></h2>
                 <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
                 <a href="/cuestionario-cesqt/?org_id=<?php echo $org_id;?>"><?php echo get_site_url();?>/cuestionario-cesqt/?org_id=<?php echo $org_id;?></a>
                 
