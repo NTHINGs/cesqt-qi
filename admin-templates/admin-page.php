@@ -71,14 +71,8 @@ function render_cesqt_graficas($org_id=NULL) {
         $org_id = $_GET['org_id'];
     }
     if($org_id != NULL) {
-        $title = get_users(
-            array(
-                'role' => 'empresa',
-                'hash' => $org_id,
-            )
-        )[0]->display_name;
+        $title = get_users(array('meta_key' => 'hash', 'meta_value' => $org_id))[0]->display_name;
 
-        echo print_r(get_users(array('meta_key' => 'hash', 'meta_value' => $org_id)));
         ?>
         
             <div class="wrap">
