@@ -50,6 +50,9 @@ function cesqt_admin_tabs( $current = 'INFORMACION' ) {
 
 function render_cesqt_qi_admin() {
     global $title;
+    print '<div class="wrap">';
+    print '<h1>' . $title . '</h1>';
+    print '</div>';
     if (current_user_can('cesqt') && !current_user_can('cesqt_admin')) {
         // Render pagina de organizacion
         $current_user = wp_get_current_user();
@@ -58,9 +61,6 @@ function render_cesqt_qi_admin() {
         
 	} elseif (current_user_can('cesqt_admin')) {
         // Render pagina de todas las organizaciones
-        print '<div class="wrap">';
-        print '<h1>' . $title . '</h1>';
-        print '</div>';
         render_cesqt_table_orgs();
 	}
     
