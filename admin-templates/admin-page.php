@@ -85,7 +85,7 @@ function render_cesqt_graficas($org_id=NULL) {
                 'compare' => '='
             )
         );
-        echo print_r($args);
+        echo print_r(get_users($args));
         ?>
         
             <div class="wrap">
