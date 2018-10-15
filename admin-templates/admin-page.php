@@ -1,5 +1,9 @@
 <?php
 
+
+if(!class_exists('Orgs_CESQT_Table')){
+    require_once( CESQT_PLUGIN_PATH . 'admin-templates/Orgs_CESQT_Table.php' );
+}
 /**
  * cesqt Tabbed Settings Page
  */
@@ -37,25 +41,56 @@ function cesqt_admin_tabs( $current = 'INFORMACION' ) {
 
 function render_cesqt_qi_admin() {
     global $title;
-    $current_user = wp_get_current_user();
-    $org_id = get_user_meta($current_user->ID, 'hash', true);
-	?>
-	
-	<div class="wrap">
-        <h2><?php echo $title; ?></h2>
-        <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
-        <a href="/cuestionario-cesqt/?org_id=<?php echo $org_id;?>"><?php echo get_site_url();?>/cuestionario-cesqt/?org_id=<?php echo $org_id;?></a>
-		
-		<?php			
-            if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('INFORMACION');
-            if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; else $tab = 'INFORMACION'; 
+    if (current_user_can('cesqt') && !current_user_can('cesqt_admin')) {
+        // Render pagina de organizacion
+        $current_user = wp_get_current_user();
+        $org_id = get_user_meta($current_user->ID, 'hash', true);
+        ?>
+        
+        <div class="wrap">
+            <h2><?php echo $title; ?></h2>
+            <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
+            <a href="/cuestionario-cesqt/?org_id=<?php echo $org_id;?>"><?php echo get_site_url();?>/cuestionario-cesqt/?org_id=<?php echo $org_id;?></a>
             
-            cesqt_qi_admin_graficas($tab, $org_id);
-		?>
-		
+            <?php			
+                if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('INFORMACION');
+                if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; else $tab = 'INFORMACION'; 
+                
+                cesqt_qi_admin_graficas($tab, $org_id);
+            ?>
+            
 
-	</div>
-<?php
+        </div>
+    <?php
+        
+	} elseif (current_user_can('cesqt_admin')) {
+        // Render pagina de todas las organizaciones
+        $variables = array(
+            "%TITLE%",
+        );
+        $values = array(
+            $title,
+        );
+        print str_replace($variables, $values, file_get_contents(  CESQT_PLUGIN_PATH . "templates/resultados-generales.html" ));
+        render_table_orgs();
+	}
+    
+}
+
+function render_table_orgs() {
+    print '<div id="poststuff">';
+
+    print '<form method="post">';
+    $wp_list_table = new Orgs_CESQT_Table();
+    if( isset($_POST['s']) ){
+        $wp_list_table->prepare_items($_POST['s']);
+    } else {
+        $wp_list_table->prepare_items();
+    }
+    $wp_list_table->search_box( 'Buscar', 'search_id' ); 
+    $wp_list_table->display();
+    print '</form>';
+    print '</div>';
 }
 
 function cesqt_qi_admin_graficas($grupo, $org_id) {
