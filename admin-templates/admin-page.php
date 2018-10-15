@@ -78,14 +78,7 @@ function render_cesqt_graficas($org_id=NULL) {
             )
         )[0]->display_name;
 
-        $args = array(
-            'meta_query' => array(
-                'key'     => 'hash',
-                'value'   => $org_id,
-                'compare' => '=='
-            )
-        );
-        echo print_r(get_users($args));
+        echo print_r(get_users(array('meta_key' => 'hash', 'meta_value' => $org_id)));
         ?>
         
             <div class="wrap">
