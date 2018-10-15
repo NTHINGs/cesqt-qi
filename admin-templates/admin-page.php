@@ -82,7 +82,7 @@ function render_cesqt_graficas($org_id=NULL) {
             'meta_query' => array(
                 'key'     => 'hash',
                 'value'   => $org_id,
-                'compare' => '='
+                'compare' => '=='
             )
         );
         echo print_r(get_users($args));
