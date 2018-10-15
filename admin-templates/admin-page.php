@@ -33,6 +33,8 @@ function cesqt_qi_admin() {
 
 function cesqt_admin_tabs( $current = 'INFORMACION' ) {
     global $wpdb;
+    $current_user = wp_get_current_user();
+    $org_id = get_user_meta($current_user->ID, 'hash', true);
     $table_grupos = $wpdb->prefix . "cesqt_grupos";
     $grupos = $wpdb->get_results(
         "SELECT * FROM $table_grupos", 
@@ -43,7 +45,7 @@ function cesqt_admin_tabs( $current = 'INFORMACION' ) {
     echo '<h2 class="nav-tab-wrapper">';
     foreach( $grupos as $index => $row ){
         $class = ( $row['nombre'] == $current ) ? ' nav-tab-active' : '';
-        echo '<a class="nav-tab'. $class. '" href="?page=resultados-cesqt-organizacionales&tab=' . $row['nombre'] . '">' . $row['nombrelimpio'] . '</a>';
+        echo '<a class="nav-tab'. $class. '" href="?page=resultados-cesqt-organizacionales&tab=' . $row['nombre'] . '&org_id=' . $org_id . '">' . $row['nombrelimpio'] . '</a>';
     }
     echo '</h2>';
 }
