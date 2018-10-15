@@ -95,7 +95,7 @@ function render_cesqt_graficas($org_id=NULL) {
 
 }
 
-function render_table_orgs() {
+function render_cesqt_table_orgs() {
     print '<div id="poststuff">';
 
     print '<form method="post">';
