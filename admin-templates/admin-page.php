@@ -67,15 +67,16 @@ function render_cesqt_qi_admin() {
 }
 
 function render_cesqt_graficas($org_id=NULL) {
-    global $title;
     if( isset($_GET['org_id']) ){
         $org_id = $_GET['org_id'];
     }
     if($org_id != NULL) {
-        global $title;
-        print '<div class="wrap">';
-        print '<h1>' . $title . '</h1>';
-        print '</div>';
+        $title = get_users(
+            array(
+                'role' => 'empresa',
+                'hash' => $org_id,
+            )
+        )[0]->display_name;
         ?>
         
             <div class="wrap">
