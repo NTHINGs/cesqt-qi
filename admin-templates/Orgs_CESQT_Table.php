@@ -3,7 +3,7 @@
  * Tabla para visualizar los resultados
  *
  *
- * @package	 resiliencia-qi
+ * @package	 cesqt-qi
  * @since    1.0.0
  */
 if ( ! class_exists( 'WP_List_Table' ) ) {

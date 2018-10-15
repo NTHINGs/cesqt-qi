@@ -65,13 +65,9 @@ function render_cesqt_qi_admin() {
         
 	} elseif (current_user_can('cesqt_admin')) {
         // Render pagina de todas las organizaciones
-        $variables = array(
-            "%TITLE%",
-        );
-        $values = array(
-            $title,
-        );
-        print str_replace($variables, $values, file_get_contents(  CESQT_PLUGIN_PATH . "templates/resultados-generales.html" ));
+        print '<div class="wrap">';
+        print '<h1>' . $title . '</h1>';
+        print '</div>';
         render_table_orgs();
 	}
     
