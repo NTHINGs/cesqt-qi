@@ -54,7 +54,7 @@ function render_cesqt_qi_admin() {
         // Render pagina de organizacion
         $current_user = wp_get_current_user();
         $org_id = get_user_meta($current_user->ID, 'hash', true);
-        render_cesqt_graficas($title, $org_id);
+        render_cesqt_graficas($org_id);
         
 	} elseif (current_user_can('cesqt_admin')) {
         // Render pagina de todas las organizaciones
@@ -66,7 +66,8 @@ function render_cesqt_qi_admin() {
     
 }
 
-function render_cesqt_graficas($title, $org_id=NULL) {
+function render_cesqt_graficas($org_id=NULL) {
+    global $title;
     if( isset($_GET['org_id']) ){
         $org_id = $_GET['org_id'];
     }
