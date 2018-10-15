@@ -61,7 +61,7 @@ function render_cesqt_qi_admin() {
         print '<div class="wrap">';
         print '<h1>' . $title . '</h1>';
         print '</div>';
-        render_table_orgs();
+        render_cesqt_table_orgs();
 	}
     
 }
