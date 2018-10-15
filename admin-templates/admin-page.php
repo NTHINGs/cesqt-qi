@@ -11,13 +11,22 @@ if(!class_exists('Orgs_CESQT_Table')){
 add_action( 'admin_menu', 'cesqt_qi_admin' );
 
 function cesqt_qi_admin() {
-    $hook = add_menu_page(
+    add_menu_page(
         'Cuestionario Calidad de Vida Laboral',     // page title
         'CESQT',     // menu title
         'cesqt',   // capability
         'cuestionario-cesqt',     // menu slug
 		'render_cesqt_qi_admin', // callback function
 		'dashicons-universal-access'
+    );
+
+    add_submenu_page(
+        null,
+        'Resultados De Tu Organización', //page title
+        'Resultados De Tu Organización', //menu title
+        'cesqt', //capability,
+        'resultados-cesqt-organizacionales',//menu slug
+        'render_cesqt_graficas' //callback function
     );
 }
 
@@ -45,23 +54,7 @@ function render_cesqt_qi_admin() {
         // Render pagina de organizacion
         $current_user = wp_get_current_user();
         $org_id = get_user_meta($current_user->ID, 'hash', true);
-        ?>
-        
-        <div class="wrap">
-            <h2><?php echo $title; ?></h2>
-            <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
-            <a href="/cuestionario-cesqt/?org_id=<?php echo $org_id;?>"><?php echo get_site_url();?>/cuestionario-cesqt/?org_id=<?php echo $org_id;?></a>
-            
-            <?php			
-                if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('INFORMACION');
-                if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; else $tab = 'INFORMACION'; 
-                
-                cesqt_qi_admin_graficas($tab, $org_id);
-            ?>
-            
-
-        </div>
-    <?php
+        render_cesqt_graficas($title, $org_id);
         
 	} elseif (current_user_can('cesqt_admin')) {
         // Render pagina de todas las organizaciones
@@ -71,6 +64,34 @@ function render_cesqt_qi_admin() {
         render_table_orgs();
 	}
     
+}
+
+function render_cesqt_graficas($title, $org_id=NULL) {
+    if( isset($_GET['org_id']) ){
+        $org_id = $_GET['org_id'];
+    }
+    if($org_id != NULL) {
+        ?>
+        
+            <div class="wrap">
+                <h2><?php echo $title; ?></h2>
+                <p>Tu link para compartir el cuestionario de resiliencia a tus empleados es: </p>
+                <a href="/cuestionario-cesqt/?org_id=<?php echo $org_id;?>"><?php echo get_site_url();?>/cuestionario-cesqt/?org_id=<?php echo $org_id;?></a>
+                
+                <?php			
+                    if ( isset ( $_GET['tab'] ) ) cesqt_admin_tabs($_GET['tab']); else cesqt_admin_tabs('INFORMACION');
+                    if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; else $tab = 'INFORMACION'; 
+                    
+                    cesqt_qi_admin_graficas($tab, $org_id);
+                ?>
+                
+
+            </div>
+        <?php
+    } else {
+        print 'ERROR ORG_ID NO ESTA DEFINIDO';
+    }
+
 }
 
 function render_table_orgs() {

@@ -104,7 +104,7 @@ class Orgs_CESQT_Table extends WP_List_Table {
 			return $data;
 		} else {
 			
-			$sql = "SELECT DISTINCT organizacion as id FROM {$wpdb->prefix}resiliencia_registros";
+			$sql = "SELECT DISTINCT organizacion as id FROM {$wpdb->prefix}cesqt_registros";
 
 			$data = $wpdb->get_results( $sql, 'ARRAY_A' );
 
@@ -188,7 +188,7 @@ class Orgs_CESQT_Table extends WP_List_Table {
 	public function process_bulk_action() {
 		//Detect when a bulk action is being triggered...
 		if ( 'view' === $this->current_action() ) {
-			wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=cuestionario-cesqt') ));
+			wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=resultados-cesqt-organizacionales') ));
 			exit;
 		}
 	}
