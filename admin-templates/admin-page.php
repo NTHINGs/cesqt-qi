@@ -35,6 +35,9 @@ function cesqt_admin_tabs( $current = 'INFORMACION' ) {
     global $wpdb;
     if( isset($_GET['org_id']) ){
         $org_id = $_GET['org_id'];
+    } else {
+        $current_user = wp_get_current_user();
+        $org_id = get_user_meta($current_user->ID, 'hash', true);
     }
     $table_grupos = $wpdb->prefix . "cesqt_grupos";
     $grupos = $wpdb->get_results(
