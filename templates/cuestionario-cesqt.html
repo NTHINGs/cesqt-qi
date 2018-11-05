@@ -12,14 +12,27 @@
                     <h1>Cuestionario de Calidad De Vida Laboral Para: %ORG_NAME%</h1>
                     <h2>Instrucciones</h2>
                     <p>
-                        Este estudio tiene como objetivo analizar cómo influye sobre la calidad de vida laboral fenómenos como el estrés laboral. Para ello, hemos elaborado un conjunto de escalas que, si son contestadas con sinceridad, nos permitirán comprender mejor esos procesos y su influencia sobre el trabajo.
-                        El cuestionario que usted rellene no será enseñado bajo ninguna razón o circunstancia a personas empleadas en su organización. Sólo tendrán acceso a su contenido los miembros del equipo de investigación. Todos los datos que refleje en él serán tratados confidencialmente. Su anonimato será mantenido en todo momento y los datos sólo se analizaran de forma agrupada.
-                        Es importante que responda a todas las cuestiones, pues las omisiones invalidan el conjunto de la escala a la que está respondiendo. Responda seleccionando la alternativa adecuada o escribiendo las respuestas en los espacios que preceden a las cuestiones, según proceda. Compruebe al final que ha contestado a todas las preguntas.
-                        Esperamos que comprenda la importancia de este estudio para el colectivo profesional del que forma parte y para futuras intervenciones que pueden mejorar su calidad de vida y la de sus compañeros de profesión. Por ello, le solicitamos su colaboración. Solo le llevará alrededor de 30 minutos contestarlo.
+                        Este estudio tiene como objetivo analizar cómo influye sobre la calidad de vida laboral
+                        fenómenos como el estrés laboral. Para ello, hemos elaborado un conjunto de escalas que, si son
+                        contestadas con sinceridad, nos permitirán comprender mejor esos procesos y su influencia sobre
+                        el trabajo.
+                        El cuestionario que usted rellene no será enseñado bajo ninguna razón o circunstancia a
+                        personas empleadas en su organización. Sólo tendrán acceso a su contenido los miembros del
+                        equipo de investigación. Todos los datos que refleje en él serán tratados confidencialmente. Su
+                        anonimato será mantenido en todo momento y los datos sólo se analizaran de forma agrupada.
+                        Es importante que responda a todas las cuestiones, pues las omisiones invalidan el conjunto de
+                        la escala a la que está respondiendo. Responda seleccionando la alternativa adecuada o
+                        escribiendo las respuestas en los espacios que preceden a las cuestiones, según proceda.
+                        Compruebe al final que ha contestado a todas las preguntas.
+                        Esperamos que comprenda la importancia de este estudio para el colectivo profesional del que
+                        forma parte y para futuras intervenciones que pueden mejorar su calidad de vida y la de sus
+                        compañeros de profesión. Por ello, le solicitamos su colaboración. Solo le llevará alrededor de
+                        30 minutos contestarlo.
                         Muchas gracias por el tiempo que va a dedicar a responder a este cuestionario.
                     </p>
                 </div>
-                <section class="container-fluid border pb-5" id="preguntas"></section>
+                <section class="container-fluid border pb-5" id="preguntas">
+                </section>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" name="submitted">Guardar</button>
                 </div>
@@ -43,11 +56,23 @@
                         <p>' + descripcion + '</p>\
                     </div>';
             }
-            
+
             data[key].preguntas.forEach(function (pregunta, i, a) {
                 var background = '';
                 if (i % 2 !== 0) {
                     background = 'style="background: rgba(192,192,192,0.3);" ';
+                }
+                if (pregunta.id == 1) {
+                    div += '\
+                    <div style="background: rgba(192,192,192,0.3);" class="row pb-2 border-bottom">\
+                        <div class="col-12 col-sm-6">\
+                            <label for="area">Área</label>\
+                        </div>\
+                        <div class="col-12 col-sm-6">\
+                            <select class="form-control" name="area" id="area" required>\
+                            </select>\
+                        </div>\
+                    </div>';
                 }
                 div += '\
                 <div ' + background + 'class="row pb-2 border-bottom">\
@@ -58,38 +83,47 @@
                 </div>';
             });
             div += '</div>';
-                
+
             $("#preguntas").append(div);
+        });
+
+
+        var areas = JSON.parse('%AREAS%');
+        areas.forEach(function (area) {
+            $('#area').append($('<option>', {
+                value: area.nombre,
+                text: area.nombre
+            }));
         });
 
         function construirOpciones(posibles_respuestas, name) {
             var opciones = '';
             var select = false;
             posibles_respuestas.forEach(function (posibles_respuesta, index, array) {
-                switch(posibles_respuesta.tipo) {
+                switch (posibles_respuesta.tipo) {
                     case 'O':
                         // Opcion abierta
                         opciones += '\
                             <div class="col-12 col-sm-6">\
-                                <input type="number" min="0" step="1" pattern="\d*" title="Solo se aceptan valores enteros (sin decimales)" class="form-control" id="'+ name + '" placeholder="'+ posibles_respuesta['label'] + '" name="'+ name + '" value="0">\
+                                <input type="number" min="0" step="1" pattern="\d*" title="Solo se aceptan valores enteros (sin decimales)" class="form-control" id="'+ name + '" placeholder="' + posibles_respuesta['label'] + '" name="' + name + '" value="0">\
                             </div>';
                         break;
                     case 'S':
                     case 'R':
                         // Dropdown con opciones
-                        if(index === 0) {
+                        if (index === 0) {
                             opciones += '\
                                 <div class="col-12 col-sm-6">\
-                                    <select class="form-control" id="'+ name + '" name="'+ name + '">\
-                                    <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
+                                    <select class="form-control" id="'+ name + '" name="' + name + '">\
+                                    <option value="'+ posibles_respuesta['valor'] + '">' + posibles_respuesta['label'] + '</option>';
                             break;
                         } else if (index > 0 && index != array.length - 1) {
                             opciones += '\
-                                <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>';
+                                <option value="'+ posibles_respuesta['valor'] + '">' + posibles_respuesta['label'] + '</option>';
                             break;
                         } else {
                             opciones += '\
-                                <option value="'+ posibles_respuesta['valor'] + '">'+ posibles_respuesta['label'] + '</option>\
+                                <option value="'+ posibles_respuesta['valor'] + '">' + posibles_respuesta['label'] + '</option>\
                             </select>\
                             </div>';
                             break;

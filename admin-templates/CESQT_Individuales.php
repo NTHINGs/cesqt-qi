@@ -10,12 +10,14 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 $search = '';
-$tipo = NULL;
-class Orgs_CESQT_Table extends WP_List_Table {
-    public function __construct($search_string ='', $tipo_param = NULL) {
-		global $search, $tipo;
+$org_id = NULL;
+$area = null;
+class CESQT_Individuales extends WP_List_Table {
+    public function __construct($search_string ='', $org_id_param = NULL, $area_param = null) {
+		global $search, $org_id, $area;
         $search = $search_string;
-        $tipo = $tipo_param;
+        $org_id = $org_id_param;
+        $area = $area_param;
 		parent::__construct( array(
 	   'singular'=> 'Registro', //Singular label
 	   'plural' => 'Registros', //plural label, also this well be one of the table css class
@@ -61,8 +63,10 @@ class Orgs_CESQT_Table extends WP_List_Table {
      */
     public function get_columns() {
         $columns = array(
-			'nombre'       => 'Nombre',
-			'id'           => 'ID',
+            'cb'     	       => '<input type="checkbox" />',
+			'id'               => 'ID',
+			'fechaaplicacion'  => 'Fecha de Aplicaciónn',
+			'area'             => 'Área',
 		);
 
         return $columns;
@@ -84,8 +88,7 @@ class Orgs_CESQT_Table extends WP_List_Table {
      */
     public function get_sortable_columns() {
         return array(
-			'nombre' => array('nombre', true),
-			'id' => array( 'id', false ),
+			'id' => array( 'id', true ),
 		);
 	}
 	
@@ -95,67 +98,73 @@ class Orgs_CESQT_Table extends WP_List_Table {
      * @return Array
      */
     private function table_data($search='') {
-		global $wpdb;
+        global $wpdb, $org_id, $area;
 
-		if(!empty($search)){
-			$args = array(
-				'search'         => '*'.esc_attr( $search ).'*',
-				'search_columns' => array( 'display_name' )
-			);
-			$query = new WP_User_Query( $args );
-			$data = array();
-			$index = 0;
-			foreach ( $query->get_results() as $user ) {
-				$hash = get_user_meta($user->ID, 'hash', true);
-				if($hash) {
-					$data[$index]['nombre'] = $user->display_name;
-					$data[$index]['id'] = $hash;
-					$index++;
-				}
-			}
-			return $data;
-		} else {
-            $args = array(
-				'search'         => '*'.esc_attr( $search ).'*',
-				'search_columns' => array( 'display_name' )
-			);
-			$query = new WP_User_Query( $args );
-			$data = array();
-			$index = 0;
-			foreach ( $query->get_results() as $user ) {
-				$hash = get_user_meta($user->ID, 'hash', true);
-				if($hash) {
-					$data[$index]['nombre'] = $user->display_name;
-					$data[$index]['id'] = $hash;
-					$index++;
-				}
-			}
-			return $data;
-		}
+        $areasql = '';
+        if ($area != NULL) {
+            $areasql = " AND R.area = '$area'";
+        }
+
+        $table_registros = $wpdb->prefix . "cesqt_registros R";
+        $data = $wpdb->get_results(
+            "SELECT id, fechaaplicacion, area FROM $table_registros WHERE organizacion = '$org_id'" . $areasql,
+            'ARRAY_A'
+        );
+
+        return $data;
 		
-	}
+    }
+    
 	
 	/**
      * Construir nombres de columnas
      *
      * @return Mixed
      */
-	function column_nombre( $item ) {
-        global $tipo;
-		$title = '<strong>' . $item['nombre'] . '</strong>';
-        
-        if ($tipo == 'individuales') {
-            $actions = [
-                'individuales' => sprintf( '<a href="?page=%s&action=%s&org_id=%s&noheader=true">Ver</a>', $_REQUEST['page'], 'individuales', $item['id'] ),
-            ];
-        } else {
-            $actions = [
-                'view'    => sprintf( '<a href="?page=%s&action=%s&org_id=%s&noheader=true">Ver</a>', $_REQUEST['page'], 'view', $item['id'] ),
-            ];
-        }
+	function column_id( $item ) {
+        global $org_id;
+        $title = '<strong>' . $item['id'] . '</strong>';
+
+        $actions = [
+            'informacion'    => sprintf( '<a href="?page=%s&action=%s&id=%s&noheader=true&org_id=%s">Ver</a>', $_REQUEST['page'], 'informacion', $item['id'], $org_id),
+            'delete'         => sprintf( '<a href="?page=%s&action=%s&id=%s&noheader=true">Eliminar</a>', $_REQUEST['page'], 'delete', $item['id'] ),
+        ];
 	  
 		return $title . $this->row_actions( $actions );
-	  }
+    }
+
+    /**
+     * Columna para seleccionar multiples filas
+     *
+     * @return String
+     */
+	function column_cb( $item ) {
+		return sprintf(
+		  '<input type="checkbox" name="bulk-delete[]" value="%s" />', $item['id']
+		);
+    }
+    /**
+     * Definir acciones en lote
+     *
+     * @return Mixed
+     */
+	public function get_bulk_actions() {
+		$actions = [
+			'bulk-delete' => 'Eliminar'
+		];
+		
+		return $actions;
+    }
+    
+    public static function delete_registro( $id ) {
+		global $wpdb;
+		
+		$wpdb->delete(
+			"{$wpdb->prefix}cesqt_registros",
+			[ 'id' => $id ],
+			[ '%d' ]
+		);
+	}
     /**
      * Define what data to show on each column of the table
      *
@@ -165,13 +174,7 @@ class Orgs_CESQT_Table extends WP_List_Table {
      * @return Mixed
      */
     public function column_default( $item, $column_name ) {
-        switch( $column_name ) {
-            case 'id':
-			case 'nombre':
-                return $item[ $column_name ];
-			default:
-                return print_r( $item, true ) ;
-        }
+        return $item[ $column_name ];
     }
     /**
      * Allows you to sort the data by the variables set in the $_GET
@@ -207,15 +210,31 @@ class Orgs_CESQT_Table extends WP_List_Table {
 	}
 	
 	public function process_bulk_action() {
-		//Detect when a bulk action is being triggered...
-		if ( 'view' === $this->current_action() ) {
-			wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=resultados-cesqt-organizacionales') ));
+        //Detect when a bulk action is being triggered...
+        if ( 'delete' === $this->current_action() ) {
+			self::delete_registro( absint( $_GET['id'] ) );
+			wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=render-cesqt-individuales') ));
+			exit;
+		}
+		if ( 'informacion' === $this->current_action() ) {
+            $url = add_query_arg( 'id', $_GET['id'], admin_url('admin.php?page=render-cesqt-individual') );
+            $url = add_query_arg( 'org_id', $_GET['org_id'], $url);
+			wp_redirect($url);
 			exit;
         }
-        
-        if ( 'individuales' === $this->current_action() ) {
-            wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=render-cesqt-individuales') ));
+
+        if ( ( isset( $_POST['action'] ) && $_POST['action'] == 'bulk-delete' )
+			 || ( isset( $_POST['action2'] ) && $_POST['action2'] == 'bulk-delete' )
+		) {
+	  
+			$delete_ids = esc_sql( $_POST['bulk-delete'] );
+		
+			foreach ( $delete_ids as $id ) {
+				self::delete_registro( $id );
+			}
+	  
+			wp_redirect(add_query_arg( 'org_id', $_GET['org_id'], admin_url('admin.php?page=render-cesqt-individuales') ));
 			exit;
-        }
+		}
 	}
 }

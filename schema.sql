@@ -6,7 +6,8 @@ CREATE TABLE %TABLE_PREFIX%registros
 (
  id               INT NOT NULL AUTO_INCREMENT ,
  fechaaplicacion  DATETIME NOT NULL ,
- organizacion     VARCHAR(64) NOT NULL,
+ organizacion     VARCHAR(64) NOT NULL ,
+ area             VARCHAR(100) NOT NULL ,
 
 PRIMARY KEY (id)
 )%CHARSET_COLLATE%;

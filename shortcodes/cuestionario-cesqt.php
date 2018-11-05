@@ -62,23 +62,36 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
                 $preguntas[$row['nombre']] = $tipo_array;
             }
 
+            $table_areas = $wpdb->prefix . "areasorgareas";
+            $areas = json_encode($wpdb->get_results(
+                "SELECT * FROM $table_areas WHERE organizacion = '{$_GET['org_id']}'"
+            ));
+
             $variables = array(
                 "%REQUEST_URI%",
                 "%DATA%",
                 "%ORG_ID%",
-                "%ORG_NAME%"
+                "%ORG_NAME%",
+                "%AREAS%",
             );
-            $organizacion = get_users(
-                array(
-                    'role' => 'empresa',
-                    'hash' => $_GET['org_id'],
-                )
-            )[0]->display_name;
+            $args = array(
+                'search'         => '**',
+                'search_columns' => array( 'display_name' )
+            );
+            $query = new WP_User_Query( $args );
+            $organizacion = null;
+            foreach ( $query->get_results() as $user ) {
+                $hash = get_user_meta($user->ID, 'hash', true);
+                if ($hash == $_GET['org_id']) {
+                    $organizacion = $user->display_name;
+                }
+            }
             $values = array(
                 esc_url( $_SERVER['REQUEST_URI'] ),
                 json_encode($preguntas),
                 $_GET['org_id'],
-                $organizacion
+                $organizacion,
+                $areas,
             );
             echo str_replace($variables, $values, file_get_contents( plugin_dir_path( __DIR__ ) . "/templates/cuestionario-cesqt.html" ));
         }
@@ -92,6 +105,7 @@ if ( ! function_exists( 'cuestionario_cesqt_shortcode' ) ) {
             $values = array(
                 'fechaaplicacion'    => current_time( 'mysql' ),
                 'organizacion'       => $_POST['organizacion'],
+                'area'               => $_POST['area'],
             );
             $wpdb->insert( $table_name, $values);
 
