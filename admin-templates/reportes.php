@@ -224,11 +224,11 @@ function cesqt_imprimir_reporte($org_id, $area) {
                     ?>
                     doc.addPage();
                     doc.setFontSize(24);
-                    doc.text('Adicciones', 10, doc.previousAutoTable.finalY + 10);
+                    doc.text('Adicciones', 10, 10);
                     doc.setFontSize(15);
-                    doc.text('Fumadores Y Bebedores', 10, doc.previousAutoTable.finalY + 20);
+                    doc.text('Fumadores Y Bebedores', 10, 20);
                     doc.autoTable({
-                        startY: doc.previousAutoTable.finalY + 25,
+                        startY: 25,
                         head: [
                             [
                                 'Fumadores',  
