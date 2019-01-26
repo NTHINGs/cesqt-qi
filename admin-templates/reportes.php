@@ -225,19 +225,21 @@ function cesqt_imprimir_reporte($org_id, $area) {
                                 $datos = construir_datos_grafica($row['nombre'], $org_id, $area);
                                 ?>
                                 doc.setFontSize(24);
+                                let special_space = 15;
                                 if ("<?php print $row['nombre']; ?>" === 'ILUSION_POR_EL_TRABAJO') {
                                     doc.text("Sindrome De Quemarse Por El Trabajo", 10, doc.previousAutoTable.finalY + 10);
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
+                                    special_space = 25;
                                 } else if ("<?php print $row['nombre']; ?>" === 'DESENCANTO_PROFESIONAL') {
                                     doc.text("Riesgos Psicosociales", 10, doc.previousAutoTable.finalY + 10);
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
-
+                                    special_space = 25;
                                 } else {
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 10);
                                 }
                                 doc.setFontSize(15);
                                 doc.autoTable({
-                                    startY: doc.previousAutoTable.finalY + 15,
+                                    startY: doc.previousAutoTable.finalY + special_space,
                                     head: [
                                         <?php
                                             print json_encode($datos['labels']);
