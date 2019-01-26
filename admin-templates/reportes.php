@@ -153,65 +153,6 @@ function cesqt_imprimir_reporte($org_id, $area) {
                         ],
                     });
 
-                    doc.setFontSize(24);
-                    doc.text('Alcoholismo y Tabaquismo', 10, doc.previousAutoTable.finalY + 10);
-                    doc.setFontSize(15);
-                    doc.text('Fumadores Y Bebedores', 10, doc.previousAutoTable.finalY + 20);
-                    doc.autoTable({
-                        startY: doc.previousAutoTable.finalY + 25,
-                        head: [
-                            [
-                                'Fumadores',  
-                                'Bebedores',  
-                            ]
-                        ],
-                        body: [
-                            [
-                                '<?php print get_resultados_pregunta_exactos($org_id, 120, 1, $area); ?>', 
-                                '<?php print get_resultados_pregunta_exactos($org_id, 124, 1, $area); ?>', 
-                            ]
-                        ],
-                    });
-                    doc.text('Fuman Al Día', 10, doc.previousAutoTable.finalY + 5);
-                    doc.autoTable({
-                        startY: doc.previousAutoTable.finalY + 10,
-                        head: [
-                            [
-                                'Cigarros',  
-                                'Puros',
-                                'Pipas',
-                            ]
-                        ],
-                        body: [
-                            [
-                                '<?php print get_promedio_pregunta($org_id, 121, $area); ?>', 
-                                '<?php print get_promedio_pregunta($org_id, 122, $area); ?>', 
-                                '<?php print get_promedio_pregunta($org_id, 123, $area); ?>', 
-                            ]
-                        ],
-                    });
-                    doc.text('Beben Al Día', 10, doc.previousAutoTable.finalY + 5);
-                    doc.setFontSize(12);
-                    doc.text('<?php echo get_promedio_pregunta($org_id, 125, $area);?> Unidades', 10, doc.previousAutoTable.finalY + 15);
-                    doc.setFontSize(15);
-                    doc.text('¿Han Sentido Necesidad De Reducir Su Consumo De Alcohol?', 10, doc.previousAutoTable.finalY + 25);
-                    doc.setFontSize(12);
-                    doc.text('<?php echo get_promedio_pregunta($org_id, 126, $area);?> Personas', 10, doc.previousAutoTable.finalY + 35);
-                    doc.setFontSize(15);
-                    doc.text('Personas Que Durante Los Últimos 3 Meses Han Constatado Algún Cambio En Sus Hábitos De Consumo De Alcohol', 10, doc.previousAutoTable.finalY + 45);
-                    doc.autoTable({
-                        startY: doc.previousAutoTable.finalY + 50,
-                        head: [
-                            ['Consume Menos De Lo Habitual', 'Consume Igual Que Siempre', 'Consume Más De Lo Habitual']
-                        ],
-                        body: [
-                            [
-                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 0, $area); ?>', 
-                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 1, $area); ?>', 
-                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 2, $area); ?>', 
-                            ]
-                        ],
-                    });
                     let special_space = 15;
 
                     <?php
@@ -281,6 +222,65 @@ function cesqt_imprimir_reporte($org_id, $area) {
                             }
                         }
                     ?>
+                    doc.setFontSize(24);
+                    doc.text('Adicciones', 10, doc.previousAutoTable.finalY + 10);
+                    doc.setFontSize(15);
+                    doc.text('Fumadores Y Bebedores', 10, doc.previousAutoTable.finalY + 20);
+                    doc.autoTable({
+                        startY: doc.previousAutoTable.finalY + 25,
+                        head: [
+                            [
+                                'Fumadores',  
+                                'Bebedores',  
+                            ]
+                        ],
+                        body: [
+                            [
+                                '<?php print get_resultados_pregunta_exactos($org_id, 120, 1, $area); ?>', 
+                                '<?php print get_resultados_pregunta_exactos($org_id, 124, 1, $area); ?>', 
+                            ]
+                        ],
+                    });
+                    doc.text('Fuman Al Día', 10, doc.previousAutoTable.finalY + 5);
+                    doc.autoTable({
+                        startY: doc.previousAutoTable.finalY + 10,
+                        head: [
+                            [
+                                'Cigarros',  
+                                'Puros',
+                                'Pipas',
+                            ]
+                        ],
+                        body: [
+                            [
+                                '<?php print get_promedio_pregunta($org_id, 121, $area); ?>', 
+                                '<?php print get_promedio_pregunta($org_id, 122, $area); ?>', 
+                                '<?php print get_promedio_pregunta($org_id, 123, $area); ?>', 
+                            ]
+                        ],
+                    });
+                    doc.text('Beben Al Día', 10, doc.previousAutoTable.finalY + 5);
+                    doc.setFontSize(12);
+                    doc.text('<?php echo get_promedio_pregunta($org_id, 125, $area);?> Unidades', 10, doc.previousAutoTable.finalY + 15);
+                    doc.setFontSize(15);
+                    doc.text('¿Han Sentido Necesidad De Reducir Su Consumo De Alcohol?', 10, doc.previousAutoTable.finalY + 25);
+                    doc.setFontSize(12);
+                    doc.text('<?php echo get_promedio_pregunta($org_id, 126, $area);?> Personas', 10, doc.previousAutoTable.finalY + 35);
+                    doc.setFontSize(15);
+                    doc.text('Personas Que Durante Los Últimos 3 Meses Han Constatado Algún Cambio En Sus Hábitos De Consumo De Alcohol', 10, doc.previousAutoTable.finalY + 45);
+                    doc.autoTable({
+                        startY: doc.previousAutoTable.finalY + 50,
+                        head: [
+                            ['Consume Menos De Lo Habitual', 'Consume Igual Que Siempre', 'Consume Más De Lo Habitual']
+                        ],
+                        body: [
+                            [
+                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 0, $area); ?>', 
+                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 1, $area); ?>', 
+                                '<?php print get_resultados_pregunta_exactos($org_id, 127, 2, $area); ?>', 
+                            ]
+                        ],
+                    });
                     doc.save('resultados_cesqt.pdf');
                 })();
             }
