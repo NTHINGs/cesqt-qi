@@ -228,6 +228,10 @@ function cesqt_imprimir_reporte($org_id, $area) {
                                 if ("<?php print $row['nombre']; ?>" === 'ILUSION_POR_EL_TRABAJO') {
                                     doc.text("Sindrome De Quemarse Por El Trabajo", 10, doc.previousAutoTable.finalY + 10);
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
+                                } else if ("<?php print $row['nombre']; ?>" === 'DESENCANTO_PROFESIONAL') {
+                                    doc.text("Riesgos Psicosociales", 10, doc.previousAutoTable.finalY + 10);
+                                    doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
+
                                 } else {
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 10);
                                 }
