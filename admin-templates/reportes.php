@@ -243,6 +243,22 @@ function cesqt_imprimir_reporte($org_id, $area) {
                                     doc.setTextColor(0,0,0);
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
                                     special_space = 25;
+                                } else if ("<?php print $row['nombre']; ?>" === 'ABSENTISMO') {
+                                    doc.setFontSize(28);
+                                    doc.setTextColor(80, 18, 70);
+                                    doc.text("Consecuencias Psicosociales", 10, doc.previousAutoTable.finalY + 10);
+                                    doc.setFontSize(24);
+                                    doc.setTextColor(0,0,0);
+                                    doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
+                                    special_space = 25;
+                                } else if ("<?php print $row['nombre']; ?>" === 'PROXIMA_PROMOCION') {
+                                    doc.setFontSize(28);
+                                    doc.setTextColor(80, 18, 70);
+                                    doc.text("Otros", 10, doc.previousAutoTable.finalY + 10);
+                                    doc.setFontSize(24);
+                                    doc.setTextColor(0,0,0);
+                                    doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 20);
+                                    special_space = 25;
                                 } else {
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 10);
                                     special_space = 15;
