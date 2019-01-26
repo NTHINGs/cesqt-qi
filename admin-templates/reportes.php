@@ -225,7 +225,7 @@ function cesqt_imprimir_reporte($org_id, $area) {
                                 $datos = construir_datos_grafica($row['nombre'], $org_id, $area);
                                 ?>
                                 doc.setFontSize(24);
-                                if ($row['nombre'] === 'ILUSION_POR_EL_TRABAJO') {
+                                if ("<?php print $row['nombre']; ?>" === 'ILUSION_POR_EL_TRABAJO') {
                                     doc.text("Sindrome De Quemarse Por El Trabajo", 10, doc.previousAutoTable.finalY + 10);
                                     doc.text("<?php print $row['nombrelimpio']; ?>", 10, doc.previousAutoTable.finalY + 15);
                                 } else {
